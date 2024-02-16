@@ -325,6 +325,24 @@
             <priority>1.0</priority>
         </url>
         <url>
+            <loc>https://sheepfish5.github.io/teedoc-notes/Linux/日常使用/蓝牙问题.html</loc>
+            <lastmod>2024-02-16</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://sheepfish5.github.io/teedoc-notes/Linux/日常使用/KDE程序Calender Reminder占用内存过大.html</loc>
+            <lastmod>2024-02-16</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://sheepfish5.github.io/teedoc-notes/Linux/日常使用/arch Linux安装过程及遇到的问题.html</loc>
+            <lastmod>2024-02-16</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
             <loc>https://sheepfish5.github.io/teedoc-notes/Linux/用msmtp发邮件.html</loc>
             <lastmod>2024-02-16</lastmod>
             <changefreq>weekly</changefreq>
@@ -350,24 +368,6 @@
         </url>
         <url>
             <loc>https://sheepfish5.github.io/teedoc-notes/Linux/基础知识/RAID1.html</loc>
-            <lastmod>2024-02-16</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://sheepfish5.github.io/teedoc-notes/Linux/日常使用/蓝牙问题.html</loc>
-            <lastmod>2024-02-16</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://sheepfish5.github.io/teedoc-notes/Linux/日常使用/KDE程序Calender Reminder占用内存过大.html</loc>
-            <lastmod>2024-02-16</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://sheepfish5.github.io/teedoc-notes/Linux/日常使用/arch Linux安装过程及遇到的问题.html</loc>
             <lastmod>2024-02-16</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
