@@ -1,0 +1,49 @@
+items:
+-   label: 简介
+    file: README.md
+-   label: 黑马程序员-苍穹外卖
+    # "collapsed": false
+    items:
+        -   label: 1.新增员工技术要点
+            file: 黑马程序员-苍穹外卖/1.新增员工技术要点.md
+        -   label: 2.员工分页查询技术要点
+            file: 黑马程序员-苍穹外卖/2.员工分页查询技术要点.md
+-   label: Java基础
+    items:
+        -   label: 匿名类和嵌套类的Class对象
+            file: Java基础/匿名类和嵌套类的Class对象.md
+-   label: Java学习
+    items:
+        -   label: 包Package
+            file: Java学习/包Package.md
+        -   label: 枚举类
+            file: Java学习/枚举类.md
+        -   label: 文档注释——javadoc
+            file: Java学习/文档注释——javadoc.md
+        -   label: 注解annotation
+            file: Java学习/注解annotation.md
+        -   label: Java-基础IO
+            file: Java学习/Java-基础IO.md
+        -   label: Java-json
+            file: Java学习/Java-json.md
+        -   label: Java标准日历
+            file: Java学习/Java标准日历.md
+        -   label: Java并发
+            file: Java学习/Java并发.md
+        -   label: Java对象访问限制
+            file: Java学习/Java对象访问限制.md
+        -   label: "Java日期和时间API（java-time）"
+            file: "Java学习/Java日期和时间API（java-time）.md"
+        -   label: protected
+            file: Java学习/protected.md
+-   label: 常见报错
+    file: 常见报错.md
+-   label: JavaEE学习
+    file: JavaEE学习.md
+-   label: maven常用指令
+    file: maven常用指令.md
+-   label: vscode中的JUnit
+    file: vscode中的JUnit.md
+-   label: vscode中的logback
+    file: vscode中的logback.md
+    

@@ -1,0 +1,38 @@
+items:
+-   label: 简介
+    file: README.md
+-   label: 基础知识
+    items:
+    -   label: 特殊文件权限SUID, SGID, SBIT总结
+        file: 基础知识/特殊文件权限SUID, SGID, SBIT总结.md
+    -   label: apt与pkg
+        file: 基础知识/apt与pkg.md
+    -   label: CPU负载表示
+        file: 基础知识/CPU负载表示.md
+    -   label: nfts的默认权限和所有者
+        file: 基础知识/nfts的默认权限和所有者.md
+    -   label: RAID1
+        file: 基础知识/RAID1.md
+-   label: 其他
+    items:
+    -   label: 安装QEMU虚拟机软件后没有网桥
+        file: 其他/安装QEMU虚拟机软件后没有网桥.md
+    -   label: arch里的虚拟机
+        file: 其他/arch里的虚拟机.md
+    -   label: Termux-Api问题
+        file: 其他/Termux-Api问题.md
+-   label: 日常使用
+    items:
+    -   label: 蓝牙问题
+        file: 日常使用/蓝牙问题.md
+    -   label: arch Linux安装过程及遇到的问题
+        file: 日常使用/arch Linux安装过程及遇到的问题.md
+    -   label: KDE程序Calender Reminder占用内存过大
+        file: 日常使用/KDE程序Calender Reminder占用内存过大.md
+    -   label: Konsole字体问题
+        file: 日常使用/Konsole字体问题.md
+-   label: 常用工具
+    file: 常用工具.md
+-   label: 用msmtp发邮件
+    file: 用msmtp发邮件.md
+

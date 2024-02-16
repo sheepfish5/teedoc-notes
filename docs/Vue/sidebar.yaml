@@ -1,0 +1,17 @@
+items:
+-   label: 简介
+    file: README.md
+-   label: 为标签设置key属性的意义&vue追踪组件
+    file: 为标签设置key属性的意义&vue追踪组件.md
+-   label: 组件对象的data属性为什么是一个函数？
+    file: 组件对象的data属性为什么是一个函数？.md
+-   label: ref()与react()的区别
+    file: ref()与react()的区别.md
+-   label: script导出对象的prop属性和data属性
+    file: script导出对象的prop属性和data属性.md
+-   label: v-bind和v-model的区别
+    file: v-bind和v-model的区别.md
+-   label: vue中的命名规范
+    file: vue中的命名规范.md
+-   label: vue中的自定义事件
+    file: vue中的自定义事件.md
