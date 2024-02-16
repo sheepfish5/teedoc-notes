@@ -1,8 +1,8 @@
 {
-    "site_name": "hello-world",
+    "site_name": "sheepfish5-notes",
     "site_slogon": "PHP是世界上最好的语言! ",
-    "site_root_url": "/",
-    "site_domain": "my_name.github.io",
+    "site_root_url": "/teedoc-notes",
+    "site_domain": "sheepfish5.github.io",
     "site_protocol": "https",
     "config_template_dir": "config",
     "route": {
