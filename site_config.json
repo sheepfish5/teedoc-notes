@@ -1,7 +1,7 @@
 {
     "site_name": "sheepfish5-notes",
     "site_slogon": "PHP是世界上最好的语言! ",
-    "site_root_url": "/teedoc-notes/",
+    "site_root_url": "/",
     "site_domain": "bethesda.asia",
     "site_protocol": "https",
     "config_template_dir": "config",
