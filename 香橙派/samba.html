@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>samba - hello-world</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/favicon.ico" alt="sheepfish5-notes">
+                
+                
+                    <h2>sheepfish5-notes</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/多媒体处理/">多媒体处理</a></li>
+<li class=""><a  href="/前端/">前端</a></li>
+<li class="active"><a  href="/香橙派/">香橙派</a></li>
+<li class=""><a  href="/C++/">C++</a></li>
+<li class=""><a  href="/Docker/">Docker</a></li>
+<li class=""><a  href="/Git/">Git</a></li>
+<li class=""><a  href="/Java/">Java</a></li>
+<li class=""><a  href="/JavaScript/">JavaScript</a></li>
+<li class=""><a  href="/Linux/">Linux</a></li>
+<li class=""><a  href="/Vue/">Vue</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active with_link"><a href="/香橙派/index.html"><span class="label">简介</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/香橙派/基础设置.html"><span class="label">基础设置</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/香橙派/使用docker安装gitea+jenkins.html"><span class="label">使用docker安装gitea+jenkins</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/香橙派/armbian.html"><span class="label">armbian</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/香橙派/samba.html"><span class="label">samba</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>samba</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2024-02-16">
+                                    2024-02-16
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h2 id="%E4%BB%8B%E7%BB%8D">介绍</h2>
+<p>在debian上需要安装包<code>smb</code>和<code>smbclient</code>，前者包含两个服务<code>smbd</code>和<code>nmbd</code>，后者是客户端，用于测试。</p>
+<p>如果需要将远程samba服务在fstab中设置开机自动挂载，还需要安装<code>cifs-utils</code>。</p>
+<p><code>smbd</code>占用139和445端口，<code>nmbd</code>占用137和138端口。</p>
+<h2 id="%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4">常用命令</h2>
+<h3 id="%3Ccode%3Epdbedit%3C/code%3E-%E6%9F%A5%E7%9C%8Bsamba%E4%B8%AD%E5%B7%B2%E6%9C%89%E7%9A%84%E7%94%A8%E6%88%B7"><code>pdbedit</code> 查看samba中已有的用户</h3>
+
+<pre class="language-bash"><code class="language-bash">pdbedit -L # 列出所有用户（简略）
+
+pdbedit -Lv # 列出所有用户的详细信息
+</code></pre>
+<h3 id="%3Ccode%3Esmbpasswd%3C/code%3E-%E7%AE%A1%E7%90%86%E8%B4%A6%E5%8F%B7"><code>smbpasswd</code> 管理账号</h3>
+
+<pre class="language-bash"><code class="language-bash">smbpasswd -a smb1  # 向samba的数据库中增加用户smb1 (smb1必须是linux中已有的用户，最好设置/sbin/nologin)
+
+smbpasswd -x smb1  # 从samba数据库中删除用户smb1
+
+smbpasswd smb1  # 修改smb1的samba密码
+</code></pre>
+<h3 id="%3Ccode%3Esmbstatus%3C/code%3E-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8A%B6%E6%80%81"><code>smbstatus</code> 服务器状态</h3>
+
+<pre class="language-bash"><code class="language-bash">smbstatus  # 列出samba服务的详细状态
+</code></pre>
+<h3 id="%3Ccode%3Esmbclient%3C/code%3E-linux%E5%AE%A2%E6%88%B7%E7%AB%AF"><code>smbclient</code> linux客户端</h3>
+
+<pre class="language-bash"><code class="language-bash"># smbclient 需要安装同名包才能使用
+
+smbclient -L 192.168.1.103  # 访问对应ip上的samba服务
+                            # 执行后默认使用名为root的samba用户，会提示输入密码
+                            # 如果不输密码直接回车，就是匿名()访问
+
+smbclient -L 192.168.1.103 -U smb1%hello  # 指定了用户smb1，密码hello
+
+# UNC路径(Universal Naming Convention, 通用命名规范), 格式如：
+# \\sambaserver\sharename
+smbclient //192.168.1.103/sharefile -U smb1%hello  # 使用UNC路径访问
+</code></pre>
+<h3 id="%3Ccode%3Etestparm%3C/code%3E-%E6%A3%80%E6%9F%A5smb.conf%E7%9A%84%E8%AF%AD%E6%B3%95%E9%94%99%E8%AF%AF"><code>testparm</code> 检查smb.conf的语法错误</h3>
+<h2 id="%E5%85%B7%E4%BD%93%E9%85%8D%E7%BD%AE">具体配置</h2>
+<p>见<code>linux\模板配置文件\smb.conf</code></p>
+<h2 id="samba%E9%85%8D%E7%BD%AE%E4%B8%AD%E7%9A%84%E5%AE%8F%E5%AE%9A%E4%B9%89">samba配置中的宏定义</h2>
+<ul>
+<li>%m 客户端主机的NetBIOS名</li>
+<li>%M 客户端主机的FQDN</li>
+<li>%H 当前用户home目录路径</li>
+<li>%U 当前用户的用户名</li>
+<li>%g 当前用户所属组</li>
+<li>%h samba服务器的主机名</li>
+<li>%L samba服务器的NetBIOS名</li>
+<li>%I 客户端主机的IP</li>
+<li>%T 当前日期和时间</li>
+<li>%S 可登录的用户名</li>
+</ul>
+<h2 id="Windows%E7%BC%93%E5%AD%98%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81">Windows缓存账号密码</h2>
+<p>使用Windows访问了linux上的samba服务，Windows会缓存输入了账号和密码。</p>
+<p>可以通过重启或注销清除缓存。</p>
+<p>或者打开cmd（不需要管理员权限），使用<code>net use</code>命令查看缓存项。</p>
+<p>使用<code>net use \\192.168.1.103\share /del</code>删除缓存项。</p>
+<p>删除之后，等待一会，再次访问，会提示重新输入密码。</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/香橙派/armbian.html">
+                            <span class="icon"></span>
+                            <span class="label">armbian</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>

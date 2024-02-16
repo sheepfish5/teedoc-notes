@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>理解基于Promise的API - hello-world</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/favicon.ico" alt="sheepfish5-notes">
+                
+                
+                    <h2>sheepfish5-notes</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/多媒体处理/">多媒体处理</a></li>
+<li class=""><a  href="/前端/">前端</a></li>
+<li class=""><a  href="/香橙派/">香橙派</a></li>
+<li class=""><a  href="/C++/">C++</a></li>
+<li class=""><a  href="/Docker/">Docker</a></li>
+<li class=""><a  href="/Git/">Git</a></li>
+<li class=""><a  href="/Java/">Java</a></li>
+<li class="active"><a  href="/JavaScript/">JavaScript</a></li>
+<li class=""><a  href="/Linux/">Linux</a></li>
+<li class=""><a  href="/Vue/">Vue</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active with_link"><a href="/JavaScript/index.html"><span class="label">简介</span><span class=""></span></a></li>
+<li class="active_parent no_link"><a><span class="label">基础</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/JavaScript/基础/词法作用域.html"><span class="label">词法作用域</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/JavaScript/基础/函数里的this.html"><span class="label">函数里的this</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/JavaScript/基础/解释闭包.html"><span class="label">解释闭包</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/JavaScript/基础/理解基于Promise的API.html"><span class="label">理解基于Promise的API</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/JavaScript/基础/事件冒泡和事件捕获.html"><span class="label">事件冒泡和事件捕获</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/JavaScript/基础/async和await.html"><span class="label">async和await</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/JavaScript/基础/javascript单线程的理解.html"><span class="label">javascript单线程的理解</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>理解基于Promise的API</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2024-02-16">
+                                    2024-02-16
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h2 id="%E5%9B%9E%E9%A1%BE%E4%B8%80%E4%B8%8B%3Ccode%3EPromise%3C/code%3E%E8%B0%83%E7%94%A8%E8%BF%87%E7%A8%8B">回顾一下<code>Promise</code>调用过程</h2>
+
+<pre class="language-javascript"><code class="language-javascript">console.log('before async');
+
+fetch(url)
+    .then((response) =&gt; {
+    if (!response.ok) {
+        throw new Error(`HTTP 错误: ${response.status}`);
+    }
+    return response.text();
+    })
+    .then((text) =&gt; poemDisplay.textContent = text)
+    .catch((error) =&gt; poemDisplay.textContent = `获取诗歌失败：${error}`);
+
+console.log('after async');
+</code></pre>
+<p>以<code>fetch(url)</code>为例，调用完函数后，函数立即返回Promise对象，后续两个<code>then()</code>函数在返回的Promise对象上注册处理函数，最后<code>catch()</code>函数注册异常处理函数。<code>fetch()</code>返回后，javascript主线程继续向下执行<code>console.log('after async');</code>，同时浏览器后台可以通过其他线程或进程执行网络操作，这些非javascript操作成功结束后，javascript主线程将之前注册了的两个处理函数加入到任务队列中，等待空闲时再执行，也就是说，<code>fetch(url)</code>函数内部的操作不归javascript管，但处理函数的注册与执行、加入任务队列，以及任务队列本身都归javascript管。</p>
+<h2 id="%E8%87%AA%E5%B7%B1%E7%BC%96%E5%86%99%E5%9F%BA%E4%BA%8EPromise%E7%9A%84API">自己编写基于Promise的API</h2>
+
+<pre class="language-javascript"><code class="language-javascript">function alarm(person, delay) {
+  return new Promise((resolve, reject) =&gt; {
+    if (delay &lt; 0) {
+      throw new Error('Alarm delay must not be negative');
+    }
+    window.setTimeout(() =&gt; {  // 将这个看作真正的浏览器使用其他线程或进程执行的网络操作。
+      resolve(`Wake up, ${person}!`);
+    }, delay);
+  });
+}
+</code></pre>
+<p>函数<code>alarm()</code>与<code>fetch()</code>类似，也是返回一个Promised对象，其他操作也都类似，就不再赘述。</p>
+<p>具体看看<code>alarm()</code>函数的内部。事实上，<code>alarm()</code>就是一个普通函数，如果其内部有一些普通javascript同步代码，javascript就正常同步执行。最后返回一个新创建的Promise对象，Promise对象的构造器需要一个执行器函数，这个函数是Promise异步操作的关键。</p>
+<blockquote>
+<p>这个执行器本身采用两个参数，这两个参数都是函数，通常被称作 <code>resolve</code> 和 <code>reject</code>。在你的执行器实现里，你调用原始的异步函数。如果异步函数成功了，就调用 <code>resolve</code>，如果失败了，就调用 <code>reject</code>。如果执行器函数抛出了一个错误，<code>reject</code> 会被自动调用。你可以将任何类型的单个参数传递到 <code>resolve</code> 和 <code>reject</code> 中。</p>
+</blockquote>
+<p>总之，执行器函数内通过调用<code>resole()</code>和<code>reject()</code>设置Promise对象的状态。</p>
+<p>这个执行器函数会在 Promise 对象被创建时立即执行，这个动作也是同步的，执行器内部的javascript代码也同步执行，一直到开启真正的异步操作（这里以<code>window.setTimeout()</code>进行模拟），这时，由浏览器安排其他线程或进程进行网络或文件读取等操作，然后javascript主线程继续向下执行，直到执行完执行器函数。再之后，就创建完Promise对象了，不过由于<code>resole()</code>和<code>reject()</code>函数尚未被调用，Promise对象的状态还是<code>pending</code>。<code>alarm()</code>将创建好的Promise对象返回，然后由<code>then()</code>方法注册处理函数，再之后，javascript主线程继续向下执行。</p>
+<p>一段时间后，异步操作结束，正如<code>window.setTimeout()</code>里所写，由javascript调用<code>resole()</code>或<code>reject()</code>设置Promise对象状态为<code>fulfilled</code>或<code>rejected</code>，然后javascript主线程将注册的处理函数或异常处理函数加到任务队列中。后续处理之前已经说过了。虽然不常用，但如果真正来写基于Promise的异步API时，执行器函数中，<code>resole()</code>和<code>reject()</code>两个函数要写到异步操作里。</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/JavaScript/基础/解释闭包.html">
+                            <span class="icon"></span>
+                            <span class="label">解释闭包</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/JavaScript/基础/事件冒泡和事件捕获.html">
+                            <span class="label">事件冒泡和事件捕获</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>

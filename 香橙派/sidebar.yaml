@@ -1,0 +1,11 @@
+items:
+-   label: 简介
+    file: README.md
+-   label: 基础设置
+    file: 基础设置.md
+-   label: 使用docker安装gitea+jenkins
+    file: 使用docker安装gitea+jenkins.md
+-   label: armbian
+    file: armbian.md
+-   label: samba
+    file: samba.md

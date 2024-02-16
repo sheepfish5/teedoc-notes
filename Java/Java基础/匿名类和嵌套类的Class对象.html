@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>匿名类和嵌套类的Class对象 - hello-world</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/favicon.ico" alt="sheepfish5-notes">
+                
+                
+                    <h2>sheepfish5-notes</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/多媒体处理/">多媒体处理</a></li>
+<li class=""><a  href="/前端/">前端</a></li>
+<li class=""><a  href="/香橙派/">香橙派</a></li>
+<li class=""><a  href="/C++/">C++</a></li>
+<li class=""><a  href="/Docker/">Docker</a></li>
+<li class=""><a  href="/Git/">Git</a></li>
+<li class="active"><a  href="/Java/">Java</a></li>
+<li class=""><a  href="/JavaScript/">JavaScript</a></li>
+<li class=""><a  href="/Linux/">Linux</a></li>
+<li class=""><a  href="/Vue/">Vue</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active with_link"><a href="/Java/index.html"><span class="label">简介</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">黑马程序员-苍穹外卖</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/Java/黑马程序员-苍穹外卖/1.新增员工技术要点.html"><span class="label">1.新增员工技术要点</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/黑马程序员-苍穹外卖/2.员工分页查询技术要点.html"><span class="label">2.员工分页查询技术要点</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="active_parent no_link"><a><span class="label">Java基础</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="active with_link"><a href="/Java/Java基础/匿名类和嵌套类的Class对象.html"><span class="label">匿名类和嵌套类的Class对象</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">Java学习</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/Java/Java学习/包Package.html"><span class="label">包Package</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/枚举类.html"><span class="label">枚举类</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/文档注释——javadoc.html"><span class="label">文档注释——javadoc</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/注解annotation.html"><span class="label">注解annotation</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/Java-基础IO.html"><span class="label">Java-基础IO</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/Java-json.html"><span class="label">Java-json</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/Java标准日历.html"><span class="label">Java标准日历</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/Java并发.html"><span class="label">Java并发</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/Java对象访问限制.html"><span class="label">Java对象访问限制</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/Java日期和时间API（java-time）.html"><span class="label">Java日期和时间API（java-time）</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/protected.html"><span class="label">protected</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/Java/常见报错.html"><span class="label">常见报错</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/JavaEE学习.html"><span class="label">JavaEE学习</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/maven常用指令.html"><span class="label">maven常用指令</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/vscode中的JUnit.html"><span class="label">vscode中的JUnit</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/vscode中的logback.html"><span class="label">vscode中的logback</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>匿名类和嵌套类的Class对象</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2024-02-16">
+                                    2024-02-16
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h2 id="%E5%8C%BF%E5%90%8D%E7%B1%BB">匿名类</h2>
+<p>Class对象是反射API的入口，要想启用Java的反射特性，一般首先要获得对应类的Class对象。</p>
+<p>创建匿名类的语法：</p>
+
+<pre class="language-Java"><code class="language-Java">Object anonymous = new Object() { 
+    public void m() {} 
+};
+</code></pre>
+<p>创建了一个继承自<code>Object</code>的匿名类，直接实例化了一个对象，并用变量<code>anonymous</code>引用了这个变量。</p>
+<p>获取匿名类的Class对象，并直接输出<code>toString()</code>方法的结果</p>
+
+<pre class="language-Java"><code class="language-Java">Class&lt;?&gt; c = anonymous.getClass().getEnclosingClass();
+System.out.println(c.toString());
+</code></pre>
+<p>最后输出的结果是<code>class test.AnnotationToolTest$1</code>(变量<code>anonymous</code>和<code>c</code>都是类<code>test.AnnotationToolTest</code>下的静态字段)</p>
+<p>这个输出结果<em>猜测</em>是和Java匿名类的实现有关，我<em>猜测</em>它可能在编译时自动创建了一个名为<code>test.AnnotationToolTest$1</code>的有名类。</p>
+<h2 id="%E5%B5%8C%E5%A5%97%E7%B1%BB">嵌套类</h2>
+<p>我们再来看看嵌套类Class对象的<code>toString()</code>方法输出</p>
+<p>在<code>test.AnnotationToolTest$1</code>类下有一个静态嵌套类<code>NestedClass</code>:</p>
+
+<pre class="language-Java"><code class="language-Java">static class NestedClass {
+    public void tmp() {}
+}
+</code></pre>
+<p>在enclosing class的main方法中，输出该嵌套类Class对象<code>toString()</code>方法的结果：</p>
+
+<pre class="language-Java"><code class="language-Java">System.out.println(NestedClass.class.toString());
+</code></pre>
+<p>结果为<code>class test.AnnotationToolTest$NestedClass</code></p>
+<p>同样猜测，这个输出结果应该和Java嵌套类的实现有关，Java可能在编译时自动创建了一个名为<code>test.AnnotationToolTest$NestedClass</code>的有名类。就像泛型的类型擦除一样，JVM实际不知道Java有泛型这种特性。</p>
+<h2 id="%E9%AA%8C%E8%AF%81Java%E6%B3%9B%E5%9E%8B%E7%9A%84%E7%B1%BB%E5%9E%8B%E6%93%A6%E9%99%A4">验证Java泛型的类型擦除</h2>
+<p>通过《Java 核心技术 卷一》和Java官网的描述，Java会在编译时对泛型进行类型擦除，因此运行时，就已经没有泛型的类型参数了，类型参数出现的地方会被替换成Object或（有束缚时）上界类型。</p>
+<p>反射API正好是在运行时起作用，可以向上面那样运行时输出类的类名，</p>
+
+<pre class="language-Java"><code class="language-Java">static List&lt;Integer&gt; list = new ArrayList&lt;&gt;(Arrays.asList(1, 2, 3, 4));
+</code></pre>
+<p>还是<code>test.AnnotationToolTest$1</code>类里的静态字段，<code>list</code>引用了一个<code>ArrayList&lt;Integer&gt;</code>对象，<code>getClassf()</code>获取<code>ArrayList&lt;Integer&gt;</code>的Class对象，然后再用<code>toString()</code>方法输出：</p>
+
+<pre class="language-Java"><code class="language-Java">System.out.println(list.getClass().toString());
+</code></pre>
+<p>结果是<code>class java.util.ArrayList</code>，而不是<code>ArrayList&lt;Integer&gt;</code>，可以验证，类型参数已经被擦除了。</p>
+<h2 id="Class%E7%9A%84%E7%B1%BB%E6%96%B9%E6%B3%95getCanonicalName%28%29">Class的类方法getCanonicalName()</h2>
+<p>对于上面提到的三种情况：匿名类，嵌套类，实例化的泛型类，如果不是直接对它们的Class对象用<code>toString()</code>方法输出，而是使用<code>getCanonicalName()</code>，情况会有所不同，输出分别是：</p>
+<ul>
+<li>匿名类：<code>null</code></li>
+<li>嵌套类：<code>test.AnnotationToolTest.NestedClass</code></li>
+<li>实例化的泛型类：<code>java.util.ArrayList</code></li>
+</ul>
+<p>除了泛型类还是正常类型擦除，其他两个都有所变化：匿名类的规范名直接是null了，嵌套类有规范名。</p>
+<p>在<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#getCanonicalName--"  target="_blank">Java官网关于<code>getCanonicalName()</code>的说明中</a>就提到如果Class对应的类没有规范名的话（[局部类](<a href="https://docs.oracle.com/javase/tutorial/java/javaOO/localclasses.html"  target="_blank">https://docs.oracle.com/javase/tutorial/java/javaOO/localclasses.html</a> 说人话就是定义在方法里的类)和匿名类，以及没有规范名的类组成的数组），就返回null。规范名是由Java语言规范定义的。</p>
+<p>那么看来嵌套类是有规范名的。</p>
+<h2 id="toGenericString%28%29%E6%96%B9%E6%B3%95%E8%BE%93%E5%87%BA%E6%B3%9B%E5%9E%8B%E5%A3%B0%E6%98%8E%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0%EF%BC%88%E4%BD%86%E4%B8%8D%E8%83%BD%E8%BE%93%E5%87%BA%E6%B3%9B%E5%9E%8B%E5%AE%9E%E4%BE%8B%E5%8C%96%E6%97%B6%E4%BC%A0%E5%85%A5%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0%EF%BC%89">toGenericString()方法输出泛型声明的类型参数（但不能输出泛型实例化时传入的类型参数）</h2>
+<p>对于泛型类型输出没有类型参数的情况，<code>toGenericString()</code>方法输出泛型声明的类型参数。比如对上面的<code>ArrayList&lt;Integer&gt;</code>的Class对象使用，输出为<code>public class java.util.ArrayList&lt;E&gt;</code>。</p>
+<p>至少能表明这是一个泛型类，但还是不能输出泛型实例化时传入的类型参数（在这里是<code>Integer</code>）。</p>
+<p><code>Field</code>，<code>Method</code>，<code>Constructor</code>等对象也分别有<code>toGenericString()</code>方法，可以输出泛型声明时的类型参数。</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/Java/黑马程序员-苍穹外卖/2.员工分页查询技术要点.html">
+                            <span class="icon"></span>
+                            <span class="label">2.员工分页查询技术要点</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/Java/Java学习/包Package.html">
+                            <span class="label">包Package</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>

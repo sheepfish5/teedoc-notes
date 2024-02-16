@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>使用docker安装gitea+jenkins - hello-world</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/favicon.ico" alt="sheepfish5-notes">
+                
+                
+                    <h2>sheepfish5-notes</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/多媒体处理/">多媒体处理</a></li>
+<li class=""><a  href="/前端/">前端</a></li>
+<li class="active"><a  href="/香橙派/">香橙派</a></li>
+<li class=""><a  href="/C++/">C++</a></li>
+<li class=""><a  href="/Docker/">Docker</a></li>
+<li class=""><a  href="/Git/">Git</a></li>
+<li class=""><a  href="/Java/">Java</a></li>
+<li class=""><a  href="/JavaScript/">JavaScript</a></li>
+<li class=""><a  href="/Linux/">Linux</a></li>
+<li class=""><a  href="/Vue/">Vue</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active with_link"><a href="/香橙派/index.html"><span class="label">简介</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/香橙派/基础设置.html"><span class="label">基础设置</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/香橙派/使用docker安装gitea+jenkins.html"><span class="label">使用docker安装gitea+jenkins</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/香橙派/armbian.html"><span class="label">armbian</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/香橙派/samba.html"><span class="label">samba</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>使用docker安装gitea+jenkins</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2024-02-16">
+                                    2024-02-16
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <p>参考：<a href="https://www.cnblogs.com/Gitea/p/jenkins.html"  target="_blank">Gitea 与 Jenkins 的集成实践，打造你的专属 CI/CD 系统</a></p>
+<h2 id="%E6%B3%A8%E6%84%8F">注意</h2>
+<h3 id="1.-Jenkins%E7%9A%84%E7%89%88%E6%9C%AC%E9%97%AE%E9%A2%98">1. Jenkins的版本问题</h3>
+<p>Jenkins不能像linux的包管理器那样自动处理各种版本冲突，因此第一次安装插件时不出意外一定会失败。但手动处理冲突（再官网上依次下载适合当前Jenkins版本的插件）实在是过于麻烦，因此选择手动将Jenkins升至最新版，这样一般能直接满足所有插件对Jenkins的版本要求。具体做法是从官网下载Jenkins的最新版war包，运行docker容器，将下载的war包替换掉容器中的<code>/usr/share/jenkins/jenkins.war</code>，然后再重启容器即可。重启之后，所有插件自动安装成功。</p>
+<blockquote>
+<p>替换最新版war包参考：<a href="https://blog.csdn.net/tomonkey/article/details/106942162"  target="_blank">Docker部署的Jenkins如何更新版本呢</a></p>
+</blockquote>
+<h3 id="2.-Jenkins%E7%89%88%E6%9C%AC%E7%BB%88%E6%9E%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95">2. Jenkins版本终极解决方法</h3>
+<p>先上Docker Hub搜jenkins，然后使用他们最新版本的tag，注意不要用默认的<code>latest</code>，那个不是最新版。比如现在的最新版是<code>jenkins/jenkins:2.414</code>。</p>
+<p>不要再手动替换了，那样太麻烦了。</p>
+<h3 id="3.-gitea%E7%9A%84webhook%E6%97%A0%E6%B3%95%E8%A7%A6%E5%8F%91">3. gitea的webhook无法触发</h3>
+<p>要在jenkins的系统配置里为Gitea Server增加URL别名，具体可以点Alias URL旁边的问号。</p>
+<blockquote>
+<p>参考：<a href="https://stackoverflow.com/a/68432979/21743075"  target="_blank">stackoverflow</a></p>
+</blockquote>
+<p><del>但即使是使用了这种方法，我也不能让webhook稳定触发。至少是我使用Gitea Webhook提供的假事件无法触发。</del>看起来不是jenkins的问题，假事件的确无法触发，但每次提交都能正常触发构建，这样就算是解决了问题。</p>
+<h3 id="4.-gitea%E7%9A%84%E7%89%88%E6%9C%AC%E9%97%AE%E9%A2%98">4. gitea的版本问题</h3>
+<p>和jenkins一样，默认的<code>latest</code>标签并不是最新版，也得上Docker Hub手动搜gitea并确定最新版。比如目前的最新版是<code>gitea/gitea:1.20-nightly</code>。</p>
+<p>另外附上gitea普通版和nightly版的区别：</p>
+<blockquote>
+<p>你好，这是Bing。我可以帮你找到一些关于gitea普通版和gitea nightly的区别的信息。😊<br />
+根据我的搜索结果，gitea普通版是指gitea的正式发布版本，它经过了充分的测试和验证，保证了稳定性和安全性。gitea nightly是指gitea的每日构建版本，它包含了最新的开发进展和功能，但可能存在一些错误和问题。<br />
+如果你想使用gitea的最新功能和特性，你可以选择gitea nightly，但你需要注意备份你的数据和配置，并且及时反馈任何问题。如果你想使用gitea的稳定版本，你可以选择gitea普通版，但你可能无法享受到一些新的改进和优化。<br />
+你可以在这里下载gitea的不同版本：<a href="https://dl.gitea.io/gitea/"  target="_blank">https://dl.gitea.io/gitea/</a><br />
+希望这些信息对你有帮助。如果你还有其他问题，欢迎继续提问。😊</p>
+</blockquote>
+<h3 id="5.-%E6%96%B0%E7%89%88gitea%E7%9A%84Webhook%E6%8A%A5%E9%94%99-webhook.ALLOWED_HOST_LIST">5. 新版gitea的Webhook报错 webhook.ALLOWED_HOST_LIST</h3>
+<p>使用新版（1.20）gitea，在测试到jenkins的webhook时，无法推送，报错如下：</p>
+
+<pre class="language-text"><code class="language-text">Delivery: Post &quot;http://jenkins:8080/gitea-webhook/post&quot;: dial tcp 172.26.0.2:8080: webhook can only call allowed HTTP servers (check your webhook.ALLOWED_HOST_LIST setting), deny 'jenkins(172.26.0.2:8080)'
+</code></pre>
+<p>原因是gitea无法发送post请求，因为新版gitea默认禁用了webhook（？？？why？？？），在<code>/data/gitea/conf/app.ini</code>中加上：</p>
+
+<pre class="language-text"><code class="language-text">[webhook]
+ALLOWED_HOST_LIST = *
+</code></pre>
+<p>之后重启容器（<code>docker container restart gitea</code>）即可。</p>
+<p>参考：<a href="https://discourse.gitea.io/t/webhook-webhook-allowed-host-list-setting/4655"  target="_blank">Webhook报错 webhook.ALLOWED_HOST_LIST</a></p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/香橙派/基础设置.html">
+                            <span class="icon"></span>
+                            <span class="label">基础设置</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/香橙派/armbian.html">
+                            <span class="label">armbian</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>

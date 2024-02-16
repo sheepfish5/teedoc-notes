@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>v-bind和v-model的区别 - hello-world</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/favicon.ico" alt="sheepfish5-notes">
+                
+                
+                    <h2>sheepfish5-notes</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/多媒体处理/">多媒体处理</a></li>
+<li class=""><a  href="/前端/">前端</a></li>
+<li class=""><a  href="/香橙派/">香橙派</a></li>
+<li class=""><a  href="/C++/">C++</a></li>
+<li class=""><a  href="/Docker/">Docker</a></li>
+<li class=""><a  href="/Git/">Git</a></li>
+<li class=""><a  href="/Java/">Java</a></li>
+<li class=""><a  href="/JavaScript/">JavaScript</a></li>
+<li class=""><a  href="/Linux/">Linux</a></li>
+<li class="active"><a  href="/Vue/">Vue</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active with_link"><a href="/Vue/index.html"><span class="label">简介</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Vue/为标签设置key属性的意义&vue追踪组件.html"><span class="label">为标签设置key属性的意义&vue追踪组件</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Vue/组件对象的data属性为什么是一个函数？.html"><span class="label">组件对象的data属性为什么是一个函数？</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Vue/ref()与react()的区别.html"><span class="label">ref()与react()的区别</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Vue/script导出对象的prop属性和data属性.html"><span class="label">script导出对象的prop属性和data属性</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/Vue/v-bind和v-model的区别.html"><span class="label">v-bind和v-model的区别</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Vue/vue中的命名规范.html"><span class="label">vue中的命名规范</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Vue/vue中的自定义事件.html"><span class="label">vue中的自定义事件</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>v-bind和v-model的区别</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2024-02-16">
+                                    2024-02-16
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <p>来自微软大小姐New Bing：</p>
+<h2 id="%E5%BF%85%E5%BA%94">必应</h2>
+<p>你好，这是Bing。我可以帮你解答这个问题。😊<br />
+根据搜索结果，vue框架中 v-bind和v-model的区别主要有以下几点：</p>
+<ul>
+<li>v-bind是单向数据绑定，它可以将vue中data中的属性绑定到任何有效元素上，但是在被绑定的地方修改数据时，data中的原始数据不会改变 。</li>
+<li>v-model是双向数据绑定，它主要用于表单元素，实现了data中的属性和表单元素之间的数据同步 。在同时使用v-model和v-bind时，v-model具有优先权。</li>
+<li>v-bind可以使用简写形式:，例如:value=&quot;message&quot;等同于v-bind:value=&quot;message&quot;。v-model没有简写形式。</li>
+</ul>
+<p>希望这些信息对你有帮助。如果你还有其他问题，欢迎继续提问。😊</p>
+<hr />
+<p>补充几点：</p>
+<p>还有一种其他绑定数据的方式：<code>{{exception}}</code>，用在HTML标签内，这显然是将表达式的值填充到HTML标签内，算是单向绑定（毕竟一般不可能把一个值赋值给一个表达式）。</p>
+<p>另外这里之所以使用“绑定”而不是函数传参时的“赋值”，是因为在vue框架中，将A绑定到B上，之后一旦A的值发生变化，B的值也立马会变化，不是像函数按值传参那样的一锤子买卖。再补充一下，单向绑定中，将A绑定到B上，A的值一变，B的值立马变得和A一样，但是B的值变了，不会把A的值强行加到B上，也就是说，此时A和B的值不相同。</p>
+<p>v-bind支持的类型：html中的属性、css的样式、对象、数组、number 类型、bool类型。</p>
+<p>v-model主要是用在表单元素中。</p>
+<p>参考：CSDN <a href="https://blog.csdn.net/u011486491/article/details/90232280"  target="_blank">https://blog.csdn.net/u011486491/article/details/90232280</a></p>
+<hr />
+<p>第二次补充：</p>
+<p>我之前都搞错了<code>v-model</code>，我以为它和<code>v-bind</code>的区别在于单向绑定和双向绑定，实际上这两个完全是不同的东西，<code>v-bind</code>的语法是<code>v-bind:attribute=&quot;exception&quot;</code>，它将一个变量或表达式绑定到html元素的属性；但<code>v-model</code>的语法是<code>v-model=&quot;variable&quot;</code>，它只用于表单控件，且用于获取表单控件的<code>value</code>属性，它一般不用于将变量值强行加到表单上。</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/Vue/script导出对象的prop属性和data属性.html">
+                            <span class="icon"></span>
+                            <span class="label">script导出对象的prop属性和data属性</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/Vue/vue中的命名规范.html">
+                            <span class="label">vue中的命名规范</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>

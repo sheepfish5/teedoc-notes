@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>Java并发 - hello-world</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/favicon.ico" alt="sheepfish5-notes">
+                
+                
+                    <h2>sheepfish5-notes</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/多媒体处理/">多媒体处理</a></li>
+<li class=""><a  href="/前端/">前端</a></li>
+<li class=""><a  href="/香橙派/">香橙派</a></li>
+<li class=""><a  href="/C++/">C++</a></li>
+<li class=""><a  href="/Docker/">Docker</a></li>
+<li class=""><a  href="/Git/">Git</a></li>
+<li class="active"><a  href="/Java/">Java</a></li>
+<li class=""><a  href="/JavaScript/">JavaScript</a></li>
+<li class=""><a  href="/Linux/">Linux</a></li>
+<li class=""><a  href="/Vue/">Vue</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active with_link"><a href="/Java/index.html"><span class="label">简介</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">黑马程序员-苍穹外卖</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/Java/黑马程序员-苍穹外卖/1.新增员工技术要点.html"><span class="label">1.新增员工技术要点</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/黑马程序员-苍穹外卖/2.员工分页查询技术要点.html"><span class="label">2.员工分页查询技术要点</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">Java基础</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/Java/Java基础/匿名类和嵌套类的Class对象.html"><span class="label">匿名类和嵌套类的Class对象</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="active_parent no_link"><a><span class="label">Java学习</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/Java/Java学习/包Package.html"><span class="label">包Package</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/枚举类.html"><span class="label">枚举类</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/文档注释——javadoc.html"><span class="label">文档注释——javadoc</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/注解annotation.html"><span class="label">注解annotation</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/Java-基础IO.html"><span class="label">Java-基础IO</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/Java-json.html"><span class="label">Java-json</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/Java标准日历.html"><span class="label">Java标准日历</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/Java/Java学习/Java并发.html"><span class="label">Java并发</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/Java对象访问限制.html"><span class="label">Java对象访问限制</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/Java日期和时间API（java-time）.html"><span class="label">Java日期和时间API（java-time）</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/protected.html"><span class="label">protected</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/Java/常见报错.html"><span class="label">常见报错</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/JavaEE学习.html"><span class="label">JavaEE学习</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/maven常用指令.html"><span class="label">maven常用指令</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/vscode中的JUnit.html"><span class="label">vscode中的JUnit</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/vscode中的logback.html"><span class="label">vscode中的logback</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>Java并发</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2024-02-16">
+                                    2024-02-16
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <ul>
+<li><p>将能同时处理多个任务的软件称为并发软件</p>
+<ul>
+<li><p>从Java5以来，Java平台就有了高并发API</p>
+</li>
+<li><p>java.util.concurrent库</p>
+</li>
+</ul>
+</li>
+<li><p>创建进程可以使用ProcessBuilder，但这超出了接下来的讨论范围。</p>
+<ul>
+<li>Java并发目前只讨论线程</li>
+</ul>
+</li>
+<li><p>Thread对象</p>
+<ul>
+<li><p>每个线程都和一个Thread对象相关联，有两种方法使用Thread对象创建并发程序</p>
+<ul>
+<li><p>直接控制线程的创建和管理，当应用需要初始化一个异步任务时，每次都实例化Thread</p>
+</li>
+<li><p>要从应用程序的其余部分抽象线程管理，将应用程序的任务传递给一个executor。</p>
+</li>
+</ul>
+</li>
+<li><p>定义并开始一个线程</p>
+<ul>
+<li><p>要实例化Thread对象，必须提供将会运行在这个线程中的代码</p>
+<ul>
+<li><p>给Thread构造器传入一个实现了Runnable接口的对象</p>
+</li>
+<li><p>创建继承自Thread的一个子类，然后重写Thread的run()方法</p>
+</li>
+</ul>
+</li>
+<li><p>然后对创建的Thread对象调用start()方法。</p>
+</li>
+<li><p>上面的两种方法各有特点：</p>
+<ul>
+<li><p>自己实现Runnable接口更具一般性，可以继承其他类</p>
+</li>
+<li><p>继承Thread用起来更方便，但父类必须是Thread会有所限制。</p>
+</li>
+<li><p>在高级线程管理API中，第一种更适用。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>用睡眠停止线程的执行</p>
+<ul>
+<li><p>静态方法Thread.sleep()暂停当前线程的执行</p>
+</li>
+<li><p>向sleep()方法传入一个整数，代表要睡眠的时间，默认单位是毫秒</p>
+</li>
+<li><p>sleep()不能保证精确的睡眠时间，因为这实际会被底层操作系统限制，并且睡眠期间还可能被中断型号终止。</p>
+</li>
+<li><p>sleep()方法抛出检查型异常InterruptedException。</p>
+<ul>
+<li>当另一个线程中断了当前正在睡眠的线程时，sleep方法就抛出该异常</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>中断</p>
+<ul>
+<li><p>一个中断信号表示这个线程应该停下现在的工作去做点别的。具体由程序员决定线程该如何响应中断。其中</p>
+</li>
+<li><p>在其他线程里对要中断的线程对象调用interupt()方法就能中断对应的线程。</p>
+<ul>
+<li>要让中断机制正确工作，被中断的线程必须支持自己的中断。</li>
+</ul>
+</li>
+<li><p>受支持的中断</p>
+<ul>
+<li><p>要被中断的线程调用抛出InterruptedException的方法（如sleep），即支持中断。</p>
+<ul>
+<li>在try-catch语句中，一般捕获到异常后直接返回。</li>
+</ul>
+</li>
+<li><p>如果一个线程很长时间没有调用抛出InterruptedException的方法怎么办？那么它必须定期调用Thread.interrupted()，如果收到中断信号，它将返回true。</p>
+<ul>
+<li>当这个方法返回true时，再手动抛出InterruptedException异常更好，这样可以在外层嵌套中用try-catch语句来集中处理异常。</li>
+</ul>
+</li>
+<li><p>中断状态标志</p>
+<ul>
+<li><p>中断机制使用称为中断状态的内部标志实现。调用Thread.interrupt将设置此标志。当线程通过调用静态方法Thread.interrupted检查中断时，中断状态将被清除。非静态isInterrupted方法由一个线程用来查询另一个线程的中断状态，它不会更改中断状态标志。</p>
+</li>
+<li><p>按照约定，任何通过抛出InterruptedException退出的方法都会在抛出时清除中断状态。但是，总是有可能由另一个线程调用中断，立即再次设置中断状态。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>join()方法</p>
+<ul>
+<li><p>join()方法允许一个线程等待另一个线程的完成</p>
+</li>
+<li><p>可以重载join方法：传入指定的等待时间</p>
+</li>
+<li><p>join也会想sleep那样抛出InterruptedException异常</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>同步</p>
+<ul>
+<li><p>线程主要通过共享对字段和引用字段引用的对象的访问来进行通信。这种形式的通信效率极高，但可能导致两种错误：线程干扰和内存一致性错误。防止这些错误所需的工具是同步。</p>
+<ul>
+<li>但是，同步可能会引入线程争用，当两个或多个线程试图同时访问同一资源时会发生这种情况，并导致Java运行时更慢地执行一个或多个线程，甚至暂停它们的执行。饥饿和活锁都是线程争用的形式。有关详细信息，请参阅“活动性”一节。</li>
+</ul>
+</li>
+<li><p>Java语言提供了两种同步用法——同步的方法和同步的语句</p>
+<ul>
+<li><p>同步方法</p>
+<ul>
+<li><p>在方法声明中添加synchronized关键字</p>
+</li>
+<li><p>对同一个对象的两个同步方法的调用不可能交错。当一个线程正在执行某个对象的同步方法时，为同一对象调用同步方法的所有其他线程都会阻塞（挂起执行），直到第一个线程处理完该对象。</p>
+</li>
+<li><p>构造器不能是同步的，在构造器前加synchronized关键字引发语法错误。</p>
+</li>
+</ul>
+</li>
+<li><p>同步语句</p>
+<ul>
+<li><p>与同步方法不同，同步语句必须指定提供内部锁的对象</p>
+</li>
+<li><p>同步语句的好处</p>
+<ul>
+<li><p>非同步方法里可以同步读写字段。对字段的读写一般必须是同步的，但可能这个方法里还会调用其他对象的方法</p>
+</li>
+<li><p>交错读写同一对象的多个字段。对象的同步方法直接锁住了整个对象，同时只能有一个线程读写字段，如果为每个字段对应创建一个用来提供锁的对象，就可以做到多个线程分别读写多个字段。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>同步方法是通过内部锁实现的</p>
+<ul>
+<li><p>当对一个对象调用同步方法时，自动获得该对象的内部锁，所有其他要调用该对象的同步方法的线程因无法获取锁而阻塞</p>
+<ul>
+<li>方法返回时自动释放锁，即使发生了异常也会自动释放锁</li>
+</ul>
+</li>
+<li><p>静态同步方法的锁是类的Class对象的锁，该锁与类的任何实例的锁不同</p>
+</li>
+<li><p>一个线程不能获取另一个线程拥有的锁。但是线程可以获取它已经拥有的锁。允许线程多次获取同一锁将启用可重入同步。这描述了同步代码直接或间接调用也包含同步代码的方法，并且两组代码使用同一锁的情况。如果没有可重入同步，同步代码将不得不采取许多额外的预防措施，以避免线程导致自身阻塞。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>活动性liveness</p>
+<ul>
+<li><p>死锁——两个或多个线程被永久阻塞、相互等待的情况。</p>
+</li>
+<li><p>饥饿——一个线程总是不能正常访问一个共享资源，一般是其他线程频繁调用共享对象的同步方法</p>
+</li>
+<li><p>活锁——一个线程经常响应另一个线程的操作而执行操作。如果另一个线程的动作也是对另一个线程的动作的响应，则可能导致活锁。与死锁一样，活锁线程无法继续前进。然而，线程并没有被阻塞--它们只是忙碌响应彼此而无法继续工作。</p>
+</li>
+</ul>
+</li>
+<li><p>受保护的块</p>
+<ul>
+<li><p>线程间经常要协调它们的活动。最常见的协调写法被称为受保护的块。</p>
+<ul>
+<li><p>这样的块通过轮询一个条件开始，只有条件为真时线程才能继续。</p>
+</li>
+<li><p>比如，两个线程（A和B）间用一个共享的boolean变量flag来通信。A用一个while循环来判断flag是否为真，只有当B将flag设置为真时，A才能向下执行。</p>
+<ul>
+<li><p>while循环内应该用Object.wait()来停止本线程。</p>
+<ul>
+<li><p>当前线程必须拥有Object的锁才能调用wait()方法，否则抛出异常。调用后，当前线程自动释放锁，并等待被其他线程用notify或notifyAll方法唤醒，然后继续等待，直到重新获得锁，然后wait()返回，继续执行。</p>
+</li>
+<li><p>在单参数版本中，中断和伪唤醒是可能的，并且此方法应始终在循环中使用</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>使用受保护的块的方法（如guardedBlocks()）应该是同步的（synchronized），while循环里直接对本实例对象调用wait()（即this.wait()，编写guardedBlocks()方法时可省略this）。</p>
+<ul>
+<li>因为wait方法要求线程拥有对象的锁，如果guardedBlocks()方法不是同步的，调用wait时，锁可能在其他线程里，就调用失败了。将guardedBlocks()方法设置为同步的，调用wait时，锁必然在当前线程中。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/Java/Java学习/Java标准日历.html">
+                            <span class="icon"></span>
+                            <span class="label">Java标准日历</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/Java/Java学习/Java对象访问限制.html">
+                            <span class="label">Java对象访问限制</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>

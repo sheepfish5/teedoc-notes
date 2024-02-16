@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>hello-world</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/favicon.ico" alt="sheepfish5-notes">
+                
+                
+                    <h2>sheepfish5-notes</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/多媒体处理/">多媒体处理</a></li>
+<li class=""><a  href="/前端/">前端</a></li>
+<li class=""><a  href="/香橙派/">香橙派</a></li>
+<li class=""><a  href="/C++/">C++</a></li>
+<li class=""><a  href="/Docker/">Docker</a></li>
+<li class=""><a  href="/Git/">Git</a></li>
+<li class="active"><a  href="/Java/">Java</a></li>
+<li class=""><a  href="/JavaScript/">JavaScript</a></li>
+<li class=""><a  href="/Linux/">Linux</a></li>
+<li class=""><a  href="/Vue/">Vue</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active with_link"><a href="/Java/index.html"><span class="label">简介</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">黑马程序员-苍穹外卖</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/Java/黑马程序员-苍穹外卖/1.新增员工技术要点.html"><span class="label">1.新增员工技术要点</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/黑马程序员-苍穹外卖/2.员工分页查询技术要点.html"><span class="label">2.员工分页查询技术要点</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">Java基础</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/Java/Java基础/匿名类和嵌套类的Class对象.html"><span class="label">匿名类和嵌套类的Class对象</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="active_parent no_link"><a><span class="label">Java学习</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="active with_link"><a href="/Java/Java学习/包Package.html"><span class="label">包Package</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/枚举类.html"><span class="label">枚举类</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/文档注释——javadoc.html"><span class="label">文档注释——javadoc</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/注解annotation.html"><span class="label">注解annotation</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/Java-基础IO.html"><span class="label">Java-基础IO</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/Java-json.html"><span class="label">Java-json</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/Java标准日历.html"><span class="label">Java标准日历</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/Java并发.html"><span class="label">Java并发</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/Java对象访问限制.html"><span class="label">Java对象访问限制</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/Java日期和时间API（java-time）.html"><span class="label">Java日期和时间API（java-time）</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/Java学习/protected.html"><span class="label">protected</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/Java/常见报错.html"><span class="label">常见报错</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/JavaEE学习.html"><span class="label">JavaEE学习</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/maven常用指令.html"><span class="label">maven常用指令</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/vscode中的JUnit.html"><span class="label">vscode中的JUnit</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Java/vscode中的logback.html"><span class="label">vscode中的logback</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1></h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2024-02-16">
+                                    2024-02-16
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <p>解释如何将类和接口打包进package，如何使用在package中的类，如何管理文件系统使得编译器可以找到源文件。</p>
+<h2 id="%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8package">为什么要使用package</h2>
+<p>为了让Java types更容易找到和使用、避免命名冲突和控制访问，程序员将相关的类型装进package中。</p>
+<blockquote>
+<p>[!Note] Definition<br />
+一个package是一组提供访问保护和命名空间管理的相关联Java types。注意这里的types指的是class、interface、enumeration还有annotation类型。enumeration和annotation类型分别是特殊的class和interface，因此在这里，types指的是class和interface。</p>
+</blockquote>
+<p>作为Java平台关键部分的types，是各种按功能打包class的package的成员：比如基础class在java.lang包里，用于读写（输入输出）的class在java.io里，等等。我们也可以把自定义的types放进package里。<br />
+假设我们写了一组表示图形对象的class，比如圆、矩形、线和点，我们还写了一个interface——Draggable，之前的class如果要能被鼠标拖动就要实现这个接口：</p>
+
+<pre class="language-Java"><code class="language-Java">// in the Draggable.java file
+public interface Draggable {
+ ...
+}
+
+// in the Graphic.java file 
+public abstract class Graphic {
+ ...
+}
+
+// in the Circle.java file 
+public class Circle extends Graphic 
+ implements Draggable {
+ ...
+}
+
+// in the Rectangle.java file
+public class Rectangle extends Graphic
+ implements Draggable {
+ ...
+}
+
+// in the Point.java file
+public class Point extends Graphic
+ implements Draggable {
+ ...
+}
+
+// in the Line.java file
+public class Line extends Graphic
+ implements Draggable {
+ ...
+}
+</code></pre>
+<p>出于不少于以下几个原因，我们应该将这些class和这个interface装进一个包：</p>
+<ul>
+<li>所有人可以一目了然这些types是相关的；</li>
+<li>所有人可以知道在哪找到提供图形相关方法的types；</li>
+<li>package创建了一个命名空间，因此我们types的名字不会和其他package的types的名字冲突；</li>
+<li>package中的types对package中的另一个type访问没有限制，但是这个package之外的types访问package内的types是有限制的。</li>
+</ul>
+<h2 id="%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AApackage">创建一个package</h2>
+<p>要创建一个package，首先要确定这个package的名字（命名规范在后面会提到），然后在这些包含types的源文件的顶部加上一条语句：</p>
+
+<pre class="language-Java"><code class="language-Java">package packagename;
+</code></pre>
+<p>这条语句必须在源文件的第一行！每一个源文件只能有一条语句，这会对文件中的所有types起作用。</p>
+<blockquote>
+<p>[!Note]<br />
+如果要放多个types在一个源文件中，只有一个type可以为public，并且这个type的名字必须和源文件相同。<br />
+虽然可以将non-public types和public type放在同一文件中（强烈不推荐除非non-public types特别小并且和public type有紧密联系），但只有public type可以被package之外的types访问。所有的top-level non-public types都是<em>package private</em>（可被package之内的types访问，不可被package之外的types访问）</p>
+</blockquote>
+<p>如果将之前的一个interface和五个class装进一个名为graphics的package中，会得到下面这样的六个源文件：</p>
+
+<pre class="language-Java"><code class="language-Java">// in the Draggable.java file
+package graphics;
+public interface Draggable {
+ ...
+}
+
+// in the Graphic.java file 
+package graphics;
+public abstract class Graphic {
+ ...
+}
+
+// in the Circle.java file 
+package graphics;
+public class Circle extends Graphic 
+ implements Draggable {
+ ...
+}
+
+// in the Rectangle.java file
+package graphics;
+public class Rectangle extends Graphic
+ implements Draggable {
+ ...
+}
+
+// in the Point.java file
+package graphics;
+public class Point extends Graphic
+ implements Draggable {
+ ...
+}
+
+// in the Line.java file
+package graphics;
+public class Line extends Graphic
+ implements Draggable {
+ ...
+}
+</code></pre>
+<p>（唯一变化就是每个文件顶部多了一条<code>package graphics;</code>语句）<br />
+如果没有<code>package graphics;</code>语句，这个类型最终属于一个无名package。一般来说，无名package只被用于小而临时的用途，或者，刚刚开始进行开发。否则，应将class和interface放在命名了的package中。</p>
+<h2 id="%E4%B8%BApackage%E5%91%BD%E5%90%8D">为package命名</h2>
+<p>由于全世界有广泛的程序员使用Java语言来写class和interface，非常可能许多程序员为不同的types使用相同的名字。事实上，在上面的例子中就已经出现了：我们定义了一个Rectangle class，但在java.awt package中已经存在了一个Rectangle class了。但如果这两个class在不同package中，编译器就允许它们同名。每个Rectangle class的fully qualified name（完全限定名）包括package名。在graphics package中的Rectangle的fully qualified name是graphics.Rectangle，java.awt package中的Rectangle class的fully qualified name是java.awt.Rectangle。<br />
+这样看来很有效，除非两个独立的程序员使用同一个package名。如何防止这种情况发生呢？命名规范。</p>
+<h3 id="%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83Naming-Conventions">命名规范Naming Conventions</h3>
+<p>package名全部使用小写字母以防和class名或interface名冲突。</p>
+<p>公司使用该公司的翻转了的互联网域名作为package名的开头：比如，package名<code>com.example.mypackage</code>是example.com下的程序员创建的一个名为mypackage的package。<br />
+公司内部的命名冲突需要由公司内部的规范自行解决，可能通过加上地区或项目名称来解决：<code>com.example.region.mypackage</code>。</p>
+<p>Java语言本身的package以java.或javax.开头。</p>
+<p>一些情况下，域名不是一个有效package名。当域名包含一个连字符或其他特殊字符时，或当package名以数字或其他不能作为Java命名开头的字符时，又或者package包含Java关键字时，域名不是一个有效的package名。在这种情况下，推荐的规范是加一个下划线：</p>
+<table>
+<thead>
+<tr>
+  <th>Domain Name</th>
+  <th>Package Name Prefix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>hyphenated-name.example.org</td>
+  <td>org.example.hyphenated_name</td>
+</tr>
+<tr>
+  <td>example.int</td>
+  <td>int_.example</td>
+</tr>
+<tr>
+  <td>123name.example.com</td>
+  <td>com.example._123name</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="%E4%BD%BF%E7%94%A8package%E6%88%90%E5%91%98">使用package成员</h2>
+<p>组成package的types被称为package members（成员）。</p>
+<p>要从外部使用一个public package member，必须通过以下方式之一：</p>
+<ul>
+<li>使用fully qualified name描述这个member；</li>
+<li>使用<code>import</code>关键字导入该package member；</li>
+<li>使用<code>import</code>关键字导入包含该package member的整个package。</li>
+</ul>
+<p>每一种方法都有适用的不同情况。</p>
+<h3 id="%E4%BD%BF%E7%94%A8fully-qualified-name">使用fully qualified name</h3>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/Java/Java基础/匿名类和嵌套类的Class对象.html">
+                            <span class="icon"></span>
+                            <span class="label">匿名类和嵌套类的Class对象</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/Java/Java学习/枚举类.html">
+                            <span class="label">枚举类</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>

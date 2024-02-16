@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>常用工具 - hello-world</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/favicon.ico" alt="sheepfish5-notes">
+                
+                
+                    <h2>sheepfish5-notes</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/多媒体处理/">多媒体处理</a></li>
+<li class=""><a  href="/前端/">前端</a></li>
+<li class=""><a  href="/香橙派/">香橙派</a></li>
+<li class=""><a  href="/C++/">C++</a></li>
+<li class=""><a  href="/Docker/">Docker</a></li>
+<li class=""><a  href="/Git/">Git</a></li>
+<li class=""><a  href="/Java/">Java</a></li>
+<li class=""><a  href="/JavaScript/">JavaScript</a></li>
+<li class="active"><a  href="/Linux/">Linux</a></li>
+<li class=""><a  href="/Vue/">Vue</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active with_link"><a href="/Linux/index.html"><span class="label">简介</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">基础知识</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/Linux/基础知识/特殊文件权限SUID, SGID, SBIT总结.html"><span class="label">特殊文件权限SUID, SGID, SBIT总结</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/基础知识/apt与pkg.html"><span class="label">apt与pkg</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/基础知识/CPU负载表示.html"><span class="label">CPU负载表示</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/基础知识/nfts的默认权限和所有者.html"><span class="label">nfts的默认权限和所有者</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/基础知识/RAID1.html"><span class="label">RAID1</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">其他</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/Linux/其他/安装QEMU虚拟机软件后没有网桥.html"><span class="label">安装QEMU虚拟机软件后没有网桥</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/其他/arch里的虚拟机.html"><span class="label">arch里的虚拟机</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/其他/Termux-Api问题.html"><span class="label">Termux-Api问题</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">日常使用</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/Linux/日常使用/蓝牙问题.html"><span class="label">蓝牙问题</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/日常使用/arch Linux安装过程及遇到的问题.html"><span class="label">arch Linux安装过程及遇到的问题</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/日常使用/KDE程序Calender Reminder占用内存过大.html"><span class="label">KDE程序Calender Reminder占用内存过大</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/日常使用/Konsole字体问题.html"><span class="label">Konsole字体问题</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="active with_link"><a href="/Linux/常用工具.html"><span class="label">常用工具</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/用msmtp发邮件.html"><span class="label">用msmtp发邮件</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>常用工具</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2024-02-16">
+                                    2024-02-16
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h2 id="1.-%3Ccode%3Ersync%3C/code%3E%E2%80%94%E2%80%94%E5%92%8C%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6">1. <code>rsync</code>——和远程服务器传输文件</h2>
+
+<pre class="language-bash"><code class="language-bash"># 将本地目录rsync同步到远程服务器，走ssh协议
+rsync -av ~/rsync/ orangepi3lts:/home/orangepi/rsync  # 事先已经在ssh的配置文件中设置了orangepi3lts的别名
+
+# 将远程服务器的目录同步到本地
+rsync -av orangepi3lts:/home/orangepi/rsync/ ~/rsync
+</code></pre>
+<h2 id="2.-%3Ccode%3Efind%3C/code%3E%E6%9F%A5%E6%89%BE%E6%96%87%E4%BB%B6">2. <code>find</code>查找文件</h2>
+<p>使用<code>find</code>命令按文件名查找文件，只能完全匹配，不能加通配符啥的：</p>
+
+<pre class="language-bash"><code class="language-bash">find / -iname orangepi-config  # 查找文件orangepe-config，不分大小写
+</code></pre>
+<h2 id="3.-%3Ccode%3Etmux%3C/code%3E%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%96%B0%E5%BB%BA%E4%BC%9A%E8%AF%9D">3. <code>tmux</code>在远程服务器新建会话</h2>
+
+<pre class="language-bash"><code class="language-bash">tmux new -s s1     # 创建会话s1
+tmux detach        # 从会话中离开
+tmux ls            # 列出所有会话
+tmux attach -t s1  # 重新进入s1
+tmux switch -t s1  # 在某个会话中，切换到s1会话
+</code></pre>
+<h2 id="4.-linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%3Ccode%3Etop%3C/code%3E">4. linux命令行任务管理器<code>top</code></h2>
+<p><code>top</code>是个交互式命令，直接使用<code>top</code>命令进入交互界面，具体操作和每个字段的含义可参考<a href="https://zhuanlan.zhihu.com/p/36995443"  target="_blank">知乎上的介绍</a>。</p>
+<p>常用按键：</p>
+<ul>
+<li><code>l</code>, <code>t</code>, <code>m</code>：依次改变负载信息栏、CPU信息栏、内存信息栏的形式</li>
+<li><code>V</code>：以树形展示进程间的父子关系。</li>
+<li><code>q</code>：退出</li>
+<li><code>h</code>或<code>?</code>：查看帮助</li>
+</ul>
+<h2 id="5.-%3Ccode%3Efree%3C/code%3E%E6%9F%A5%E7%9C%8B%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8">5. <code>free</code>查看内存使用</h2>
+
+<pre class="language-bash"><code class="language-bash">free -mt # 以MiB为单位查看内存使用情况，包括物理内存和swap
+</code></pre>
+<p>具体参考<code>free --help</code></p>
+<h2 id="6.-%3Ccode%3Edf%3C/code%3E%E6%9F%A5%E7%9C%8B%E7%A3%81%E7%9B%98%E4%BD%BF%E7%94%A8">6. <code>df</code>查看磁盘使用</h2>
+
+<pre class="language-bash"><code class="language-bash">df -lh
+</code></pre>
+<h2 id="7.-%3Ccode%3Elsblk%3C/code%3E%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E6%89%80%E6%9C%89%E7%A1%AC%E7%9B%98%E6%83%85%E5%86%B5%EF%BC%88%E4%B8%8D%E8%AE%BA%E6%98%AF%E5%90%A6%E6%8C%82%E8%BD%BD%EF%BC%89">7. <code>lsblk</code>查看系统所有硬盘情况（不论是否挂载）</h2>
+
+<pre class="language-bash"><code class="language-bash">sudo lsblk
+</code></pre>
+<p>具体参考<a href="https://zhuanlan.zhihu.com/p/560173521"  target="_blank">知乎上的介绍</a></p>
+<h2 id="8.-%3Ccode%3Enetstat%3C/code%3E%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%BB%9C%E6%83%85%E5%86%B5">8. <code>netstat</code>查看网络情况</h2>
+
+<pre class="language-bash"><code class="language-bash">sudo netstat -tunlp
+</code></pre>
+<h2 id="9.-%E6%9F%A5%E7%9C%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E5%A4%96%E7%BD%91ip">9. 查看自己的外网ip</h2>
+
+<pre class="language-bash"><code class="language-bash">curl myip.ipip.net
+</code></pre>
+<h2 id="10.-%E4%BF%AE%E5%A4%8D%E6%8D%9F%E5%9D%8F%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F">10. 修复损坏的文件系统</h2>
+<p><a href="https://www.bing.com/search?q=fsck+%E4%BF%AE%E5%A4%8D%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F&amp;form=ANNTH1&amp;refig=1c6ddca2ee784a7389fa390cfd995ed4&amp;sp=1&amp;lq=0&amp;qs=LT&amp;pq=fsck+&amp;sc=10-5&amp;cvid=1c6ddca2ee784a7389fa390cfd995ed4"  target="_blank">参考网站</a></p>
+<p>先取消挂载文件系统，再使用<code>fsck</code>修复：</p>
+
+<pre class="language-bash"><code class="language-bash">sudo umount /dev/sdb1
+sudo fsck -p /dev/sdb1
+</code></pre>
+<h2 id="11.-%E5%88%A0%E9%99%A4%3Ccode%3Essh%3C/code%3E%E6%8C%87%E7%BA%B9">11. 删除<code>ssh</code>指纹</h2>
+
+<pre class="language-bash"><code class="language-bash">ssh-keygen -R 192.168.3.26
+</code></pre>
+<h2 id="12.-%E5%9C%86%E5%91%A8%E7%8E%87%E8%AE%A1%E7%AE%97%E8%84%9A%E6%9C%AC%E6%A8%A1%E6%8B%9F%E9%AB%98%E8%B4%9F%E8%BD%BD">12. 圆周率计算脚本模拟高负载</h2>
+<p>看看算pi前一万位要多久，命令：</p>
+
+<pre class="language-bash"><code class="language-bash">time echo &quot;scale=10000;a(1)*4&quot; | bc -l
+</code></pre>
+<h2 id="13.-%E6%9F%A5%E7%9C%8B%3Ccode%3EUUID%3C/code%3E">13. 查看<code>UUID</code></h2>
+<p>参考: <a href="https://zhuanlan.zhihu.com/p/62459117"  target="_blank">https://zhuanlan.zhihu.com/p/62459117</a></p>
+
+<pre class="language-bash"><code class="language-bash">blkid
+</code></pre>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/Linux/日常使用/Konsole字体问题.html">
+                            <span class="icon"></span>
+                            <span class="label">Konsole字体问题</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/Linux/用msmtp发邮件.html">
+                            <span class="label">用msmtp发邮件</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>

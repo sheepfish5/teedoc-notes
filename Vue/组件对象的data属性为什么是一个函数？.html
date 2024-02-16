@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>组件对象的data属性为什么是一个函数？ - hello-world</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/favicon.ico" alt="sheepfish5-notes">
+                
+                
+                    <h2>sheepfish5-notes</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/多媒体处理/">多媒体处理</a></li>
+<li class=""><a  href="/前端/">前端</a></li>
+<li class=""><a  href="/香橙派/">香橙派</a></li>
+<li class=""><a  href="/C++/">C++</a></li>
+<li class=""><a  href="/Docker/">Docker</a></li>
+<li class=""><a  href="/Git/">Git</a></li>
+<li class=""><a  href="/Java/">Java</a></li>
+<li class=""><a  href="/JavaScript/">JavaScript</a></li>
+<li class=""><a  href="/Linux/">Linux</a></li>
+<li class="active"><a  href="/Vue/">Vue</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active with_link"><a href="/Vue/index.html"><span class="label">简介</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Vue/为标签设置key属性的意义&vue追踪组件.html"><span class="label">为标签设置key属性的意义&vue追踪组件</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/Vue/组件对象的data属性为什么是一个函数？.html"><span class="label">组件对象的data属性为什么是一个函数？</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Vue/ref()与react()的区别.html"><span class="label">ref()与react()的区别</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Vue/script导出对象的prop属性和data属性.html"><span class="label">script导出对象的prop属性和data属性</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Vue/v-bind和v-model的区别.html"><span class="label">v-bind和v-model的区别</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Vue/vue中的命名规范.html"><span class="label">vue中的命名规范</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Vue/vue中的自定义事件.html"><span class="label">vue中的自定义事件</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>组件对象的data属性为什么是一个函数？</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2024-02-16">
+                                    2024-02-16
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h2 id="ChatGPT">ChatGPT</h2>
+<p><code>data</code> 属性是一个函数而不是直接写成一个 JavaScript 对象的原因涉及到 Vue 组件的实例化和响应式数据的管理。</p>
+<p>当一个组件被 Vue 实例化时，它会创建一个组件实例，并为该组件实例分配一份 <code>data</code> 中定义的数据。如果 <code>data</code> 直接是一个对象，那么所有的组件实例将共享同一个对象引用，这会导致一个组件的状态改变会影响其他所有组件的状态，造成不可预料的问题。</p>
+<p>通过将 <code>data</code> 定义为一个返回对象的函数，Vue 在实例化组件时会调用该函数并为每个组件实例返回一个全新的数据对象。这样每个组件实例都有独立的数据副本，彼此之间的状态不会相互影响，从而保证了组件之间的隔离性和数据的独立性。</p>
+<p>另外，<code>data</code> 对象中的属性需要被设置为响应式，以便 Vue 能够追踪数据的变化并更新视图。当我们将 <code>data</code> 定义为一个函数时，每次调用该函数都会返回一个新的对象，这样 Vue 能够捕捉到新对象上属性的变化并使其成为响应式的。如果直接使用对象字面量形式，Vue 将无法检测到属性的添加或删除，也无法对新增属性进行响应式处理。</p>
+<p>总结一下为什么 <code>data</code> 应该是一个函数：</p>
+<ol>
+<li>避免组件之间共享数据引起的问题。</li>
+<li>每个组件实例都有独立的数据副本，确保数据的隔离性。</li>
+<li>每次调用函数都会返回一个新的对象，使得 Vue 能够追踪到数据的变化并做出响应。</li>
+</ol>
+<p>因此，Vue 推荐将 <code>data</code> 定义为函数，这是为了确保组件能够正常运行，并且能够正确地处理数据的响应式更新。</p>
+<hr />
+<p>组件与<code>data</code>属性有点像javascript面向对象的原型继承。如果<code>data</code>写成一个对象，那就相当于这个<code>data</code>对象在原型对象上，所有的组件实例都共用了原型对象的<code>data</code>属性，一个实例改动了，其他实例都受到影响。所以使用将<code>data</code>属性写成函数返回的形式，这样每个组件都有自己单独的<code>data</code>属性。</p>
+<p>注意“<code>data</code>属性”有时直接指<code>data()</code>这个函数，有时指由<code>data</code>属性创建的（就是函数返回值）、自动绑定组件默认导出对象下的属性。</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/Vue/为标签设置key属性的意义&vue追踪组件.html">
+                            <span class="icon"></span>
+                            <span class="label">为标签设置key属性的意义&vue追踪组件</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/Vue/ref()与react()的区别.html">
+                            <span class="label">ref()与react()的区别</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>

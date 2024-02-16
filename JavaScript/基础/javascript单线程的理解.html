@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>javascript单线程的理解 - hello-world</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/favicon.ico" alt="sheepfish5-notes">
+                
+                
+                    <h2>sheepfish5-notes</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/多媒体处理/">多媒体处理</a></li>
+<li class=""><a  href="/前端/">前端</a></li>
+<li class=""><a  href="/香橙派/">香橙派</a></li>
+<li class=""><a  href="/C++/">C++</a></li>
+<li class=""><a  href="/Docker/">Docker</a></li>
+<li class=""><a  href="/Git/">Git</a></li>
+<li class=""><a  href="/Java/">Java</a></li>
+<li class="active"><a  href="/JavaScript/">JavaScript</a></li>
+<li class=""><a  href="/Linux/">Linux</a></li>
+<li class=""><a  href="/Vue/">Vue</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active with_link"><a href="/JavaScript/index.html"><span class="label">简介</span><span class=""></span></a></li>
+<li class="active_parent no_link"><a><span class="label">基础</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/JavaScript/基础/词法作用域.html"><span class="label">词法作用域</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/JavaScript/基础/函数里的this.html"><span class="label">函数里的this</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/JavaScript/基础/解释闭包.html"><span class="label">解释闭包</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/JavaScript/基础/理解基于Promise的API.html"><span class="label">理解基于Promise的API</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/JavaScript/基础/事件冒泡和事件捕获.html"><span class="label">事件冒泡和事件捕获</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/JavaScript/基础/async和await.html"><span class="label">async和await</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/JavaScript/基础/javascript单线程的理解.html"><span class="label">javascript单线程的理解</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>javascript单线程的理解</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2024-02-16">
+                                    2024-02-16
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <p>以下都来自ChatGPT的对话。</p>
+<h2 id="%E8%AF%B7%E9%97%AE%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3javascript%E6%98%AF%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%9A%84%EF%BC%9F">请问如何理解javascript是单线程的？</h2>
+<p>JavaScript是一种单线程编程语言，这意味着它只能同时执行一个任务。具体来说，JavaScript代码是按顺序执行的，<strong>从上到下逐行执行，每行代码都会阻塞后续代码的执行，直到当前行代码执行完毕才会执行下一行。</strong></p>
+<p>这是因为JavaScript的设计初衷是在浏览器中处理用户交互，例如响应按钮点击、处理表单提交等。<strong>单线程的设计可以保证多个交互事件按照顺序被处理，避免了资源竞争和数据访问冲突的问题。</strong></p>
+<p>然而，JavaScript也提供了一些机制来处理一些异步操作，例如：定时器函数、事件监听器和AJAX请求。这些异步操作可以在后台执行，不会阻塞主线程的执行。当异步操作完成后，将会触发相应的回调函数，以便处理结果。</p>
+<p>尽管JavaScript是单线程的，但通过合理使用异步操作和回调函数，可以实现并发执行的效果，提高程序的性能和响应能力。</p>
+<h2 id="%E9%82%A3javascript%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%E7%9A%84%EF%BC%9F">那javascript是如何实现异步编程的？</h2>
+<p>JavaScript通过<strong>任务队列</strong>和<strong>事件循环机制</strong>来实现异步编程。</p>
+<p>在JavaScript中，当需要执行一些耗时的操作时，比如从服务器加载数据、读取文件等，传统的同步方式会导致程序阻塞，直到操作完成才能继续执行后续代码。为了解决这个问题，JavaScript引入了异步编程模型。</p>
+<p>异步编程通过将任务交给其他线程或进程处理，然后在任务完成后通知主线程继续执行后续代码。而JavaScript是单线程的，所以异步任务的实现使用了任务队列和事件循环机制。</p>
+<p>任务队列是用来保存异步任务的队列，每个异步任务完成后都会被放入任务队列中。而事件循环机制则负责不断地检查任务队列，<strong>当主线程空闲时，会从任务队列中取出一个任务，并执行相应的代码</strong>。</p>
+<p>常见的异步编程方式包括回调函数、Promise和async/await。回调函数是最早被广泛使用的方式，通过传递一个函数作为参数，在异步任务完成后调用该函数。Promise则是ES6引入的一种更为友好的方式，通过Promise对象可以更简洁地处理异步任务的状态和结果。async/await是ES2017引入的语法糖，更直观地表达异步代码的执行顺序，使代码看起来更像是同步的。</p>
+<p>总之，通过任务队列和事件循环机制，JavaScript能够实现高效的异步编程，提升代码的性能和用户体验。</p>
+<h3 id="%E8%AF%B7%E9%97%AE%E4%BD%A0%E6%89%80%E8%AF%B4%E7%9A%84javascript%E4%B8%BB%E7%BA%BF%E7%A8%8B%E6%98%AF%E5%8F%AA%E8%B4%9F%E8%B4%A3%E6%89%A7%E8%A1%8Cjavascript%E4%BB%A3%E7%A0%81%E5%90%97%EF%BC%9F%E5%A6%82%E6%9E%9C%E6%98%AF%E7%9A%84%E8%AF%9D%EF%BC%8C%E9%82%A3%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E6%9C%BA%E5%88%B6%E6%98%AF%E9%9D%A0%E5%85%B6%E4%BB%96%E7%BA%BF%E7%A8%8B%E6%89%A7%E8%A1%8C%E7%9A%84%E5%90%97%EF%BC%9F">请问你所说的javascript主线程是只负责执行javascript代码吗？如果是的话，那事件循环机制是靠其他线程执行的吗？</h3>
+<p>是的，JavaScript主线程负责执行JavaScript代码。但是，<strong>事件循环机制并不是由其他线程执行的，而是由JavaScript主线程自身管理</strong>。当JavaScript主线程执行完所有的同步代码后，会从任务队列（task queue）中取出一个任务，然后执行该任务。这个过程是反复进行的，称为事件循环（event loop）。也就是说，JavaScript主线程是负责在任务队列中取出任务并执行的。</p>
+<h3 id="%E9%82%A3javascript%E4%B8%BB%E7%BA%BF%E7%A8%8B%E4%B9%9F%E8%B4%9F%E8%B4%A3%E5%B0%86%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E6%94%BE%E5%85%A5%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97%E5%90%97%EF%BC%9F">那javascript主线程也负责将异步任务放入任务队列吗？</h3>
+<p>是的，JavaScript主线程负责执行同步代码，并且当遇到异步任务时，将其放入任务队列中等待执行。这些异步任务可以是定时器、事件监听器、网络请求等。一旦主线程完成当前执行的任务，它会轮询任务队列，并将队列中的第一个任务取出执行。这种机制被称为事件循环(Event Loop)。所以，JavaScript主线程负责管理同步和异步任务的执行顺序。</p>
+<p>总结一下就是任务队列和事件循环机制都是javascript主线程自己负责的，而那些具体的异步任务会分派到其他线程执行。</p>
+<hr />
+<p><em>无法保证ChatGPT的话完全正确，但估计也八九不离十。</em></p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/JavaScript/基础/async和await.html">
+                            <span class="icon"></span>
+                            <span class="label">async和await</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>

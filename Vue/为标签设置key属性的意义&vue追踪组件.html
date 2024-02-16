@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>为标签设置`key`属性的意义&vue追踪组件 - hello-world</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/favicon.ico" alt="sheepfish5-notes">
+                
+                
+                    <h2>sheepfish5-notes</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/多媒体处理/">多媒体处理</a></li>
+<li class=""><a  href="/前端/">前端</a></li>
+<li class=""><a  href="/香橙派/">香橙派</a></li>
+<li class=""><a  href="/C++/">C++</a></li>
+<li class=""><a  href="/Docker/">Docker</a></li>
+<li class=""><a  href="/Git/">Git</a></li>
+<li class=""><a  href="/Java/">Java</a></li>
+<li class=""><a  href="/JavaScript/">JavaScript</a></li>
+<li class=""><a  href="/Linux/">Linux</a></li>
+<li class="active"><a  href="/Vue/">Vue</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active with_link"><a href="/Vue/index.html"><span class="label">简介</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/Vue/为标签设置key属性的意义&vue追踪组件.html"><span class="label">为标签设置key属性的意义&vue追踪组件</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Vue/组件对象的data属性为什么是一个函数？.html"><span class="label">组件对象的data属性为什么是一个函数？</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Vue/ref()与react()的区别.html"><span class="label">ref()与react()的区别</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Vue/script导出对象的prop属性和data属性.html"><span class="label">script导出对象的prop属性和data属性</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Vue/v-bind和v-model的区别.html"><span class="label">v-bind和v-model的区别</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Vue/vue中的命名规范.html"><span class="label">vue中的命名规范</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Vue/vue中的自定义事件.html"><span class="label">vue中的自定义事件</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>为标签设置`key`属性的意义&vue追踪组件</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2024-02-16">
+                                    2024-02-16
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <p>来自ChatGPT的回答：</p>
+<h2 id="%E4%BB%8B%E7%BB%8D%3Ccode%3Ekey%3C/code%3E%E5%B1%9E%E6%80%A7">介绍<code>key</code>属性</h2>
+<p>在Vue.js中，<code>key</code>属性是一个特殊的属性，通常用于在渲染元素列表时（例如使用<code>v-for</code>指令）帮助Vue高效地更新DOM。</p>
+<p>当渲染列表时，Vue使用<code>key</code>属性来跟踪列表中每个节点的身份标识。它能够识别出哪些元素被添加、删除或修改，从而在数据发生变化时，应用最少的DOM更新来反映这些变化。</p>
+<p>举个例子，考虑以下使用<code>v-for</code>指令渲染项目列表的代码：</p>
+
+<pre class="language-html"><code class="language-html">&lt;div v-for=&quot;item in items&quot; :key=&quot;item.id&quot;&gt;{{ item.name }}&lt;/div&gt;
+</code></pre>
+<p>在这个例子中，<code>:key=&quot;item.id&quot;</code>属性为每个渲染的<code>&lt;div&gt;</code>元素分配了一个唯一的标识符（例如每个项目的<code>id</code>属性）。<strong>当<code>items</code>数组发生变化（项目被添加、删除或重新排序）时，Vue使用这些键来识别列表中每个元素的身份。然后，它通过重用和重新排序现有的DOM节点，而不是完全重新渲染整个列表，高效地更新DOM。</strong>（总之vue通过这样的方式，来做到以最小的花费更新DOM，比如只删除或只增加多出来的DOM节点）</p>
+<p>在列表中包含可能会改变位置的元素，或者存在带有可变状态的元素时，使用<code>key</code>是特别重要的。如果没有使用<code>key</code>，Vue可能无法正确跟踪这些变化，从而导致意外的行为或性能问题。</p>
+<p>请注意，<code>key</code>属性应该在列表内是唯一的，并且通常不建议使用随机值或索引作为键，因为这可能会导致响应性和渲染方面的潜在问题。相反，使用唯一且稳定的标识符（例如数据库ID）作为键是更好的做法。</p>
+<p>总结一下，Vue中的<code>key</code>属性是一个优化渲染和更新列表的机制，确保在处理动态数据时获得更好的性能和正确的行为。</p>
+<h2 id="%3Ccode%3Ekey%3C/code%3E%E5%B1%9E%E6%80%A7%E6%98%AFvue%E5%86%85%E9%83%A8%E4%BD%BF%E7%94%A8%E7%9A%84%E5%90%97%EF%BC%9F%E6%9C%80%E5%90%8E%E6%B8%B2%E6%9F%93%E5%BE%97%E5%88%B0%E7%9A%84html%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E6%A0%87%E7%AD%BE%E5%BA%94%E8%AF%A5%E6%98%AF%E4%B8%8D%E4%BC%9A%E5%B8%A6%E6%9C%89%3Ccode%3Ekey%3C/code%3E%E5%B1%9E%E6%80%A7%E5%90%A7"><code>key</code>属性是vue内部使用的吗？最后渲染得到的html文件中的标签应该是不会带有<code>key</code>属性吧</h2>
+<p>是的，<code>key</code> 属性是 Vue 内部使用的，并不会直接在最终渲染得到的 HTML 文件中出现。</p>
+<p>当 Vue 渲染组件时，它会使用 <code>key</code> 属性来追踪每个子组件的身份和状态。这样 Vue 就可以在需要更新组件时，精确地识别哪些组件需要被销毁、重新创建，或者仅仅更新其状态，从而避免不必要的 DOM 操作和提高性能。</p>
+<p>然而，最终渲染得到的 HTML 文件中并不包含 <code>key</code> 属性。<code>key</code> 属性只是 Vue 内部用于优化渲染的一种手段，它在 Virtual DOM 的 diff 算法中起到关键作用。当 Vue 更新视图时，会根据 <code>key</code> 属性的信息来确定哪些元素需要被处理，但这些信息并不会直接反映在最终生成的 HTML 文件中。</p>
+<p>所以，尽管你在 Vue 组件模板中使用了 <code>key</code> 属性，最终渲染的 HTML 元素是不会带有 <code>key</code> 属性的。它仅用于 Vue 的内部算法，用于管理组件的更新和渲染过程，对最终的 DOM 结构是无感知的。</p>
+<h2 id="%E9%82%A3%E6%97%A2%E7%84%B6%E6%9C%80%E5%90%8E%E6%B8%B2%E6%9F%93%E5%BE%97%E5%88%B0%E7%9A%84html%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E6%A0%87%E7%AD%BE%E4%B8%8D%E4%BC%9A%E5%B8%A6%E6%9C%89%3Ccode%3Ekey%3C/code%3E%E5%B1%9E%E6%80%A7%EF%BC%8C%E8%BF%99%E6%97%B6vue%E6%A1%86%E6%9E%B6%E8%BF%98%E8%83%BD%E8%BF%BD%E8%B8%AA%E7%BB%84%E4%BB%B6%E5%90%97%EF%BC%9F">那既然最后渲染得到的html文件中的标签不会带有<code>key</code>属性，这时vue框架还能追踪组件吗？</h2>
+<p>虽然最终渲染得到的 HTML 文件中的标签不会带有 <code>key</code> 属性，但 Vue 仍然能够追踪子组件，这是因为 Vue 在内部维护了一个虚拟 DOM (Virtual DOM)。虚拟 DOM 是一个轻量级的 JavaScript 对象树，它对应着真实 DOM 的结构。</p>
+<p>当 Vue 组件被渲染时，实际上是先生成了一个虚拟 DOM 树。虚拟 DOM 包含了组件结构和状态的信息，包括子组件的关系、属性、事件监听器等。</p>
+<p>在后续的更新过程中，当组件的状态发生变化时，Vue 会再次生成一个新的虚拟 DOM 树，然后通过对比新旧虚拟 DOM 树的差异，找出具体需要更新的部分。Vue 的算法会高效地计算出最小的 DOM 操作来使真实 DOM 与新的虚拟 DOM 同步，从而实现对视图的更新。</p>
+<p><code>key</code> 属性在这个过程中发挥着关键作用。在进行虚拟 DOM 的差异对比时，<code>key</code> 属性可以帮助 Vue 正确地识别出具有相同身份的子组件，从而正确地处理子组件的更新、创建和销毁。如果没有使用 <code>key</code> 属性，Vue 可能会错误地处理组件的更新，导致出现一些不符合预期的问题。</p>
+<p>因此，虽然最终渲染得到的 HTML 文件中没有 <code>key</code> 属性，但 Vue 仍然能够追踪子组件的变化和状态，通过虚拟 DOM 的对比算法，高效地更新视图，实现了组件级别的响应式渲染。</p>
+<hr />
+<p>其他参考：知乎 <a href="https://zhuanlan.zhihu.com/p/374563365"  target="_blank">https://zhuanlan.zhihu.com/p/374563365</a></p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/Vue/index.html">
+                            <span class="icon"></span>
+                            <span class="label">简介</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/Vue/组件对象的data属性为什么是一个函数？.html">
+                            <span class="label">组件对象的data属性为什么是一个函数？</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>

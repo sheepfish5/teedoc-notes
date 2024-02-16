@@ -1,0 +1,19 @@
+items:
+-   label: 简介
+    file: README.md
+-   label: 基础
+    items:
+    -   label: 词法作用域
+        file: 基础/词法作用域.md
+    -   label: 函数里的this
+        file: 基础/函数里的this.md
+    -   label: 解释闭包
+        file: 基础/解释闭包.md
+    -   label: 理解基于Promise的API
+        file: 基础/理解基于Promise的API.md
+    -   label: 事件冒泡和事件捕获
+        file: 基础/事件冒泡和事件捕获.md
+    -   label: async和await
+        file: 基础/async和await.md
+    -   label: javascript单线程的理解
+        file: 基础/javascript单线程的理解.md

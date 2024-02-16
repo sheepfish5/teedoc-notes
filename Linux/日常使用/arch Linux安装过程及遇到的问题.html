@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>arch安装过程中遇到的问题 - hello-world</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/favicon.ico" alt="sheepfish5-notes">
+                
+                
+                    <h2>sheepfish5-notes</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/多媒体处理/">多媒体处理</a></li>
+<li class=""><a  href="/前端/">前端</a></li>
+<li class=""><a  href="/香橙派/">香橙派</a></li>
+<li class=""><a  href="/C++/">C++</a></li>
+<li class=""><a  href="/Docker/">Docker</a></li>
+<li class=""><a  href="/Git/">Git</a></li>
+<li class=""><a  href="/Java/">Java</a></li>
+<li class=""><a  href="/JavaScript/">JavaScript</a></li>
+<li class="active"><a  href="/Linux/">Linux</a></li>
+<li class=""><a  href="/Vue/">Vue</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active with_link"><a href="/Linux/index.html"><span class="label">简介</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">基础知识</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/Linux/基础知识/特殊文件权限SUID, SGID, SBIT总结.html"><span class="label">特殊文件权限SUID, SGID, SBIT总结</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/基础知识/apt与pkg.html"><span class="label">apt与pkg</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/基础知识/CPU负载表示.html"><span class="label">CPU负载表示</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/基础知识/nfts的默认权限和所有者.html"><span class="label">nfts的默认权限和所有者</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/基础知识/RAID1.html"><span class="label">RAID1</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">其他</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/Linux/其他/安装QEMU虚拟机软件后没有网桥.html"><span class="label">安装QEMU虚拟机软件后没有网桥</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/其他/arch里的虚拟机.html"><span class="label">arch里的虚拟机</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/其他/Termux-Api问题.html"><span class="label">Termux-Api问题</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="active_parent no_link"><a><span class="label">日常使用</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/Linux/日常使用/蓝牙问题.html"><span class="label">蓝牙问题</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/Linux/日常使用/arch Linux安装过程及遇到的问题.html"><span class="label">arch Linux安装过程及遇到的问题</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/日常使用/KDE程序Calender Reminder占用内存过大.html"><span class="label">KDE程序Calender Reminder占用内存过大</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/日常使用/Konsole字体问题.html"><span class="label">Konsole字体问题</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/Linux/常用工具.html"><span class="label">常用工具</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/用msmtp发邮件.html"><span class="label">用msmtp发邮件</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>arch安装过程中遇到的问题</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2024-02-16">
+                                    2024-02-16
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <p>20220905<br />
+安装的全过程是看的知乎大佬的图文教程：<a href="https://zhuanlan.zhihu.com/p/138951848"  target="_blank">2021 Archlinux双系统安装教程（超详细） - 知乎 (zhihu.com)</a><br />
+安装工作是很久之前完成的，这篇文章是安装后补写的，因此安装前的各种信息没办法截图记录。</p>
+<h2 id="%E5%AE%89%E8%A3%85%E5%89%8D">安装前</h2>
+<h3 id="%E4%BF%AE%E6%94%B9efi%E5%88%86%E5%8C%BA">修改efi分区</h3>
+<p>我原本的efi分区之后默认的100MiB，但是arch Linux官网上建议大小是300MiB，知乎教程上也建议扩大分区，于是我就安装了DiskGenius打算从C盘分店容量给efi，</p>
+<blockquote>
+<p>当时执行到这一步的时候我想起来了，电脑刚买回来的时候efi分区和C盘之间应该是有一个“恢复分区”，但我当时不知道那个是干什么的，于是上网找方法把它给删掉了，之后多出来的空间加到C盘去了。<br />
+如果我当时没动这个恢复分区的话，现在就可以把恢复分区加到efi分区了，就不用动C盘了，也就没有之后这么多麻烦了。</p>
+</blockquote>
+<p>当时DiskGenius提示无法直接在系统里把C盘向后移动，要用PE系统。<br />
+于是我找到了B站大佬自制的PE：<a href="https://www.hotpe.top/download"  target="_blank">下载 – HotPE</a><br />
+把PE安装在了SD卡上，进PE，用其自带的DiskGenius将C盘向后移动了一段距离，并把这些距离分到了efi分区中，此时efi分区容量刚好是1GiB。</p>
+<h3 id="%E6%81%A2%E5%A4%8D%E7%B3%BB%E7%BB%9F">恢复系统</h3>
+<p>退出PE，进入原系统，然后就出现问题了：<br />
+<img src="../../images/ArchLinux%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%981.jpg" alt="图片" /><br />
+显示错误码0xc0000225。上网搜了这个错误码，看了几篇方法：<br />
+<a href="https://www.reneelab.com.cn/m/windows-10-0xc0000225-error.html"  target="_blank">Windows 10出现0xc0000225错误代码如何解决？_都叫兽软件 (reneelab.com.cn)</a></p>
+<p><a href="https://www.abackup.com/easybackup-tutorials/win10-boot-0xc0000225-cannot-enter-6540.html"  target="_blank">解决Win10开机0xc0000225进不去系统的5个方法！ (abackup.com)</a><br />
+试了其中几篇不需要系统启动盘的方法，无效。<br />
+之后我又在PE中把efi分区和C盘恢复，退出PE，再次进入原系统，这个时候仍然是蓝屏，不过错误码变成了0xc000000f。同样，也查了这个错误码：<a href="https://www.disktool.cn/content-center/your-pc-needs-to-be-repaired-0xc000000f-666.html"  target="_blank">快速修复：出现错误代码0xc000000f怎么解决？ (disktool.cn)</a></p>
+<p>又这样反复了几次后，感觉这些方法都没什么用，于是打算重装系统。当然，在重装前进PE把C盘中的部分文件保存到了D盘中。</p>
+<h3 id="%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F">重装系统</h3>
+<p>这个主要也是看的知乎文章，不过现在找不到那篇文章了。<br />
+主要步骤就是制作启动盘和装系统。</p>
+<h4 id="%E5%88%B6%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9B%98">制作系统盘</h4>
+<p>先下载系统镜像文件。我在著名的<a href="https://msdn.itellyou.cn"  target="_blank">msdn, I tell you</a>上下的Windows10镜像，启动盘制作工具用的<a href="https://rufus.ie/zh/"  target="_blank">Rufus</a>。<br />
+由于原系统用不了，就直接用的PE就行制作。<br />
+但总是进度条没过多久就报错，我一开始还以为是U盘的问题（毕竟这个U盘是高二买的，之后大量读写后已经明显损坏了），还向刘舟禹借了他的U盘，结果还是同样的问题。<br />
+反复试了很多次，还上网查了报错码，换了Rufus的好几个版本，还是没用。<br />
+一天中午的时候，我想试试家里的Windows7老电脑，结果一试，居然成了！还是用的有无数坏道的老U盘。那么看来应该就是PE无法制作启动盘了。</p>
+<h4 id="%E8%A3%85%E7%B3%BB%E7%BB%9F">装系统</h4>
+<p>在装系统前，试了下之前文章中用启动盘恢复系统的方法，还是无效，这才真正开始装系统了。<br />
+直接装，还是没办法装上去，这个时候我心态已经平和了，于是直接扔下不管了。</p>
+<h4 id="%E5%85%B3%E8%81%94efi%E5%88%86%E5%8C%BA%E5%92%8CC%E7%9B%98">关联efi分区和C盘</h4>
+<p>过了几天，心情稳定下来后，再接着想办法解决问题。<br />
+根据鸟哥的Linux教程给出的开机流程，我猜测原efi分区是直接用硬盘扇区地址联系到C盘的，而我移动了C盘，efi内记录的仍是原C盘的位置，开机时引导到错误的C盘位置，所以就蓝屏。<br />
+如果我能重置efi分区，让它联系到新的C盘，这样应该就能够正确开机。<br />
+上网搜了重置efi分区的方法：<a href="https://zhidao.baidu.com/question/653113488423102885/answer/2864708912.html"  target="_blank">如何重新建立EFI引导分区_百度知道 (baidu.com)</a><br />
+查到了百度知道上腾讯电脑管家官方的回答：</p>
+<p><img src="../../images/ArchLinux%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%982.png" alt="图片" /></p>
+<p>跟着这个方法，在PE中cmd用命令：</p>
+
+<pre class="language-cmd"><code class="language-cmd">bcdboot c:\windows /s o: /f uefi /l zh-cn
+</code></pre>
+<blockquote>
+<p>这个命令是直接抄的回答，当时的盘符现在记不得了。<br />
+当时根据回答改了盘符。</p>
+</blockquote>
+<p>之后退出PE，重进系统，错误码从0xc0000225变成了0xc000000f，我肯定是看不懂具体什么意思，当时单纯以为成功联系efi分区和C盘了，特别激动，然后赶快再次装系统，这次进入的界面都和之前不一样了。</p>
+<h4 id="%E5%86%8D%E6%AC%A1%E8%A3%85%E7%B3%BB%E7%BB%9F">再次装系统</h4>
+<p>重装系统其实就是格式化原系统盘，然后装上新的系统。<br />
+在格式化系统盘时，又出问题了，连一个分区都识别不到。<br />
+再次上网查了：<br />
+<a href="https://www.asus.com.cn/support/FAQ/1044458#A2"  target="_blank">疑难解答 - 如何解决安装Windows 11/10时找不到磁盘驱动器 | 官方支持 | ASUS 中国</a><br />
+总之就是英特尔第十一代酷睿加了新特性，导致了找不到磁盘驱动器。<br />
+我用的时宏碁电脑，结果在华硕官网上找到了答案。<br />
+根据答案在启动盘上下了相关工具，在装系统时用上工具，成功识别到磁盘。<br />
+之后的步骤就很简单了。<br />
+安装完后又安装各种Windows更新，装各种驱动……最后勉强回到之前系统的状态（不过肯定还是有蛮多不一样的，比如电池策略就只有一个，原来还有一个Acer策略；系统还带了个“移动套餐&quot;的UWP应用，原来是没有的；新系统安装不了英特尔傲腾软件，第一次成功安装了，但是启用不了，之后连安装都安装不上……其他地方应该也有些不同，但我可能感觉不到）</p>
+<h3 id="%E7%BB%93%E6%9E%9C">结果</h3>
+<p>本来打算安装arch Linux的，结果先学会了安装Windows。<br />
+不过结果还是OK的，efi分区已经扩大到了1GiB：</p>
+<p><img src="../../images/ArchLinux%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%983.png" alt="图片" /></p>
+<blockquote>
+<p>C、D盘间还多了个恢复分区</p>
+</blockquote>
+<hr />
+<h2 id="%E5%AE%89%E8%A3%85%E6%97%B6">安装时</h2>
+<p>安装时倒是没出什么太大的问题，直接跟着知乎流程走就OK了。</p>
+<hr />
+<h2 id="%E5%AE%89%E8%A3%85%E5%90%8E">安装后</h2>
+<p>安装后主要有几个问题：没有预装的浏览器，没有中文输入法，连电脑自带的扬声器也用不了，用不了蓝牙。</p>
+<h3 id="%E6%B5%8F%E8%A7%88%E5%99%A8">浏览器</h3>
+<p>原来有个KDE自带的浏览器，不过明显不太好用，之后我自己用命令行装了Firefox，勉强用了一下，还是用不习惯。最后跟着网上的教程装了edge，具体哪篇文章找不到了。</p>
+<blockquote>
+<p>即使是Linux的edge也可以登录微软账号同步消息，edge确实特别好用。</p>
+</blockquote>
+<h3 id="%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95">中文输入法</h3>
+<p>看的知乎其他的文章，装了fcitx5。<br />
+一开始还用不了汉语输入，后面才发现添加的是“键盘-汉语”，只有添加“Pinyin”或其他比如“Wubi”这样的输入法才能输入汉语。<br />
+添加汉语输入法后又发现英语输入法又出问题了：它会显示完整单词（单词补全），即使是在命令行里也会显示，但Windows中，即使是安装输入法前的arch Linux输入英文时也没有这个单词补全：</p>
+<p><img src="../../images/ArchLinux%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%984.png" alt="图片" /></p>
+<p>我不希望输英文也有这个补全功能。但无论我怎么改设置，都去不掉这个英文补全。<br />
+之后突然一次重启后，英文补全就没了，我到现在也不知道是什么原因。</p>
+<h3 id="%E7%94%B5%E8%84%91%E8%87%AA%E5%B8%A6%E7%9A%84%E6%89%AC%E5%A3%B0%E5%99%A8">电脑自带的扬声器</h3>
+<p>一开始用不了扬声器，看视频没有声音，插有线耳机也没用。<br />
+觉得是声卡的驱动没打上，先是找了很多文章装驱动，但也没有效果。用<code>aplay -l</code>命令也是显示找不到声卡。<br />
+最后看到这篇arch Linux社区上的提问：<a href="https://bbs.archlinux.org/viewtopic.php?id=258594"  target="_blank">SOLVED No Sound card found in fresh Arch installation / Newbie Corner / Arch Linux Forums</a><br />
+装上sof-firmware和alsa-ucm-conf这两个藏得特别深的固件后重启，才成功启用扬声器。</p>
+<h3 id="%E8%93%9D%E7%89%99">蓝牙</h3>
+<p>直接看的官网上的<a href="https://wiki.archlinux.org/title/Bluetooth_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)"  target="_blank">Bluetooth (简体中文) - ArchWiki (archlinux.org)</a><br />
+可以连上我的罗技K380，但还是连不上我的联想蓝牙耳机，看了csdn上的文章<a href="https://blog.csdn.net/qq_34548075/article/details/107062005"  target="_blank">(18条消息) Failed to connect: org.bluez.Error.Failed_没有B树的博客-CSDN博客</a>后还是没用。其实即使是连K380还是不太顺利。<br />
+这个蓝牙问题到现在还没解决。</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/Linux/日常使用/蓝牙问题.html">
+                            <span class="icon"></span>
+                            <span class="label">蓝牙问题</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/Linux/日常使用/KDE程序Calender Reminder占用内存过大.html">
+                            <span class="label">KDE程序Calender Reminder占用内存过大</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>

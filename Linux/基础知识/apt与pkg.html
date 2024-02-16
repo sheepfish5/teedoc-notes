@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>apt与pkg的关系——Bing的回答 - hello-world</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/favicon.ico" alt="sheepfish5-notes">
+                
+                
+                    <h2>sheepfish5-notes</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/多媒体处理/">多媒体处理</a></li>
+<li class=""><a  href="/前端/">前端</a></li>
+<li class=""><a  href="/香橙派/">香橙派</a></li>
+<li class=""><a  href="/C++/">C++</a></li>
+<li class=""><a  href="/Docker/">Docker</a></li>
+<li class=""><a  href="/Git/">Git</a></li>
+<li class=""><a  href="/Java/">Java</a></li>
+<li class=""><a  href="/JavaScript/">JavaScript</a></li>
+<li class="active"><a  href="/Linux/">Linux</a></li>
+<li class=""><a  href="/Vue/">Vue</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active with_link"><a href="/Linux/index.html"><span class="label">简介</span><span class=""></span></a></li>
+<li class="active_parent no_link"><a><span class="label">基础知识</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/Linux/基础知识/特殊文件权限SUID, SGID, SBIT总结.html"><span class="label">特殊文件权限SUID, SGID, SBIT总结</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/Linux/基础知识/apt与pkg.html"><span class="label">apt与pkg</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/基础知识/CPU负载表示.html"><span class="label">CPU负载表示</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/基础知识/nfts的默认权限和所有者.html"><span class="label">nfts的默认权限和所有者</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/基础知识/RAID1.html"><span class="label">RAID1</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">其他</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/Linux/其他/安装QEMU虚拟机软件后没有网桥.html"><span class="label">安装QEMU虚拟机软件后没有网桥</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/其他/arch里的虚拟机.html"><span class="label">arch里的虚拟机</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/其他/Termux-Api问题.html"><span class="label">Termux-Api问题</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">日常使用</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/Linux/日常使用/蓝牙问题.html"><span class="label">蓝牙问题</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/日常使用/arch Linux安装过程及遇到的问题.html"><span class="label">arch Linux安装过程及遇到的问题</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/日常使用/KDE程序Calender Reminder占用内存过大.html"><span class="label">KDE程序Calender Reminder占用内存过大</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/日常使用/Konsole字体问题.html"><span class="label">Konsole字体问题</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/Linux/常用工具.html"><span class="label">常用工具</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/Linux/用msmtp发邮件.html"><span class="label">用msmtp发邮件</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>apt与pkg的关系——Bing的回答</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2024-02-16">
+                                    2024-02-16
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <p>你好，这是Bing。我可以帮你解答你的问题。😊</p>
+<p>debian系统中的apt和pkg是什么意思？这两个东西有什么不同？</p>
+<p>apt和pkg都是debian系统中的包管理工具，它们可以用来安装、卸载、更新和查询软件包。但是它们有一些区别：</p>
+<p>apt是一个高级的包管理工具，它可以通过仓库（repository）获取软件包资源，解决依赖关系，不能安装本地包。apt是基于dpkg的，它可以使用dpkg来处理单个的deb文件，也可以直接调用dpkg的命令。<br />
+dpkg是一个低级的包管理工具，它可以安装本地包，不解决依赖关系，不关心仓库内的软件。dpkg绕过apt包数据库直接对软件包操作，所以你用dpkg安装过的软件包用apt可以再安装一遍，系统不知道之前安装过了，将会覆盖之前dpkg的安装。<br />
+pkg是FreeBSD系统的二进制包管理工具，它与dpkg类似，但是它使用的包格式是.txz而不是.deb。pkg也可以从远程仓库获取软件包，并且会处理依赖关系。<br />
+总之，apt和pkg都是基于仓库的包管理工具，而dpkg是基于本地文件的包管理工具。apt和pkg都可以处理依赖关系，而dpkg不能。apt和dpkg都使用.deb格式的软件包，而pkg使用.txz格式的软件包。</p>
+<p>希望这能回答你的问题。如果你还有其他问题，请继续提问。</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/Linux/基础知识/特殊文件权限SUID, SGID, SBIT总结.html">
+                            <span class="icon"></span>
+                            <span class="label">特殊文件权限SUID, SGID, SBIT总结</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/Linux/基础知识/CPU负载表示.html">
+                            <span class="label">CPU负载表示</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>

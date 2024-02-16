@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>前端——响应式图片 - hello-world</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/favicon.ico" alt="sheepfish5-notes">
+                
+                
+                    <h2>sheepfish5-notes</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/多媒体处理/">多媒体处理</a></li>
+<li class="active"><a  href="/前端/">前端</a></li>
+<li class=""><a  href="/香橙派/">香橙派</a></li>
+<li class=""><a  href="/C++/">C++</a></li>
+<li class=""><a  href="/Docker/">Docker</a></li>
+<li class=""><a  href="/Git/">Git</a></li>
+<li class=""><a  href="/Java/">Java</a></li>
+<li class=""><a  href="/JavaScript/">JavaScript</a></li>
+<li class=""><a  href="/Linux/">Linux</a></li>
+<li class=""><a  href="/Vue/">Vue</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active with_link"><a href="/前端/index.html"><span class="label">简介</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/前端/响应式图片.html"><span class="label">响应式图片</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>前端——响应式图片</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2024-02-16">
+                                    2024-02-16
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h2 id="%E5%9C%BA%E6%99%AF">场景</h2>
+<p>同一个网站，在宽屏设备（以电脑端）的情况：<br />
+<img src="../images/Pasted-image-20221009191312.png" alt="图片" /><br />
+在窄屏设备（以手机为例）的情况：<br />
+<img src="../images/Pasted-image-20221009191332.png" alt="图片" /><br />
+网站原生就是为宽屏设备设计，宽屏设备的情况就是网站开发人员想要表现的界面。<br />
+到了窄屏设备，主要变化就是页眉的图片变窄了，页眉图片和内容图片所占屏幕的比例变了——页眉图片所占的比例更大了，内容图片更小了。</p>
+<blockquote>
+<p>占屏幕的比例（简称占屏比）<br />
+这里所说的占屏比不是单靠数字计算，即算显示物体总像素数再去出屏幕总像素书，从而得到一个比值。<br />
+更关键的是给人的观感：</p>
+<ol>
+<li>高度height越小而宽度width越大，占屏比越小。也就是说，越偏向窄条型的东西占屏比越小，越偏向正方形的东西占屏比越大</li>
+<li>位置越靠近中心的东西占屏比越大，越靠近边缘的东西占屏比越小。</li>
+</ol>
+</blockquote>
+<p>总而言之，在手机上，页眉图片占比更大了，内容图片更小了，但由于人们往往更关注内容图片（页眉图片一般是CSS背景图片，起装饰作用），这样就破坏了人们的阅读体验。</p>
+<p>这时作为网站开发/设计人员，就应该想办法降低页眉占屏比，而提高内容图片占屏比。</p>
+<hr />
+<h2 id="%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E3%80%81%E5%88%86%E8%BE%A8%E7%8E%87%E3%80%81%E5%83%8F%E7%B4%A0">图片尺寸、分辨率、像素</h2>
+<p>关于这几个内容网上各种说法，质量也参差不齐，我一直都没有形成固定概念，这次就固定下来了。</p>
+<h3 id="%E5%B0%BA%E5%AF%B8">尺寸</h3>
+<p>这里的尺寸以<strong>厘米</strong>为单位，也就是说，图片的尺寸指的是真实世界中的大小。<br />
+不是以像素为单位！！！</p>
+<h3 id="%E5%88%86%E8%BE%A8%E7%8E%87">分辨率</h3>
+<p>分辨率ppi，Pixel Per Inch，即每英寸像素数，定义了真实世界中图像的精细程度：600ppi的图像像素更密集，也就是说，将同一幅图像在真实世界中分别以600ppi和300ppi的分辨率打印出来，在近距离观看的情况下，600ppi的图像比300ppi的图像更精细。</p>
+<h3 id="%E5%83%8F%E7%B4%A0">像素</h3>
+<p>就是图像的像素点数量，有两种表示方法，第一种4比3比例的4800万像素，第二种6000乘8000，这两种方法表示的完全是一种东西。</p>
+<p>关键公式：<code>尺寸 *分辨率 = 像素</code><br />
+这个公式连接了图片在真实世界中的显示和在计算机中的显示。<br />
+公式左边表示将图片打印下来，尺寸越大，代表必须降低分辨率，这就意味着近距离看图片将会十分粗糙，但却适合远距离看；同样，如果为了使图片更精细，提高分辨率，必然要缩小图片的尺寸，这时图片就更小了，只能近距离看了。<br />
+在计算机中只考虑像素（高度像素* 宽度像素），因为毕竟计算机的显示就是以像素为单位的。<br />
+但是，计算机确实只管像素这一个属性的，可我们人眼是看显示屏的啊，又不能直接看存在计算机里的二进制数据。因此，显示屏就代替了打印机，负责连接计算机和真实世界了。</p>
+<h3 id="%E6%98%BE%E7%A4%BA%E5%99%A8%E5%8F%82%E6%95%B0">显示器参数</h3>
+<p>显示器公式：<code>显示尺寸 *显示分辨率 = 像素</code><br />
+和打印出来一样，显示尺寸也就是图片显示在显示器上的真实大小，我们直接用尺子去量显示器上的图片，量到多长，显示尺寸就是多长。显然，是以厘米为单位。</p>
+<blockquote>
+<p>其实显示尺寸就是尺寸，由于大家基本都是用屏幕看图片，因此特意拿出来说，意味：<em>显示器中图片的尺寸属性</em></p>
+</blockquote>
+<p>显示分辨率也一样就是分辨率，即单位长度上的像素数，表示像素密度，图片精细程度。<br />
+我们在屏幕上看图时，如果将图片缩放调成100%，也就是图片像素和显示器像素点对点，显示分辨率就是屏幕的分辨率。</p>
+<hr />
+<p>回到原问题来，我们想降低页眉图片的占屏比，根据公式<code>显示尺寸 * 显示分辨率 = 像素</code>，我们实际希望降低的显示尺寸，在显示分辨率不变的情况下（比如浏览器控制缩放100%，即控制显示分辨率为屏幕的分辨率），可以降低像素，也就是说，在窄屏设备上使用页眉图片像素更少的版本，就会使得显示尺寸更小，从而降低了占屏比。<br />
+为了降低像素，一个方法是对图片进行裁切，保留重要部分，删去次要部分。同时，也可以减少图片高度heigh，这样也能降低占屏比。这样通过裁切的方式我们把它称为<strong>美术设计问题（art direction problem）</strong>。<br />
+由于页眉图片更小了，内容图片就更靠近中间位置了，从而也提高了内容图片的占屏比。</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/前端/index.html">
+                            <span class="icon"></span>
+                            <span class="label">简介</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>
