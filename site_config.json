@@ -16,7 +16,8 @@
             "/Java/": "docs/Java",
             "/JavaScript/": "docs/JavaScript",
             "/Linux/": "docs/Linux",
-            "/Vue/": "docs/Vue"
+            "/Vue/": "docs/Vue",
+            "/随笔/": "docs/随笔"
         },
         "pages": {
             "/": "pages/index"
